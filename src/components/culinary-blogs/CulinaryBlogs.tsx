@@ -1,5 +1,5 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import { Box, Button, Heading } from '@chakra-ui/react';
+import { Box, Button, Heading, Stack } from '@chakra-ui/react';
 
 import CulinaryBlogCard from '~/components/culinary-blogs/CulinaryBlogCard';
 import mockCulinaryBlogs from '~/components/culinary-blogs/mock-culinary-blogs';
@@ -17,11 +17,11 @@ const CulinaryBlogs = () => (
         <Heading as='h3' fontSize='1.5rem' fontWeight={500}>
             Кулинарные блоги
         </Heading>
-        <Box mt={3} display='flex' flexDirection='column' gap={3}>
+        <Stack direction={['column', 'column', 'row']} mt={3} gap={3}>
             {mockCulinaryBlogs.map((culinaryBlog) => (
                 <CulinaryBlogCard culinaryBlog={culinaryBlog} key={culinaryBlog.id} />
             ))}
-        </Box>
+        </Stack>
         <Button variant='ghost' mt={3} mx='auto' rightIcon={<ArrowForwardIcon />}>
             Все авторы
         </Button>

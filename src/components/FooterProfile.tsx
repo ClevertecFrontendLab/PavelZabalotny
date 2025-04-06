@@ -8,7 +8,13 @@ import { CreateIcon, SearchIcon } from '~/components/layout/icons';
 const CreateHomeIcon = () => <Image src={HomeIcon} boxSize={10} />;
 
 const FooterProfile = ({ orientation = 'horizontal' }: ButtonGroupProps) => (
-    <ButtonGroup orientation={orientation} spacing={0} py='10px'>
+    <ButtonGroup
+        w='100%'
+        orientation={orientation}
+        spacing={0}
+        py='10px'
+        justifyContent='space-around'
+    >
         <CustomProfileButton
             leftIcon={<CreateHomeIcon />}
             text='Главная'

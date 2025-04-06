@@ -6,7 +6,7 @@ const Footer = () => (
     <Box
         as='footer'
         bg='brand.yellow'
-        position={{ base: 'fixed', md: 'static' }}
+        position='fixed'
         bottom='0'
         left='0'
         w='100%'

@@ -26,7 +26,12 @@ const CulinaryBlogCard = ({
         <Box display='flex' alignItems='center' gap={2}>
             <Image src={avatar} boxSize={8} />
             <Box>
-                <Text isTruncated maxWidth={235} fontWeight={500} lineHeight={1.5}>
+                <Text
+                    isTruncated
+                    maxWidth={['235px', '235px', '160px']}
+                    fontWeight={500}
+                    lineHeight={1.5}
+                >
                     {userName}
                 </Text>
                 <Box fontSize='0.75rem' color='rgba(0, 0, 0, 0.64)'>

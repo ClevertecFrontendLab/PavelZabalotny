@@ -16,7 +16,7 @@ const Search = ({ title, description }: SearchProps) => (
         <Box as='p' textAlign='center'>
             {description}
         </Box>
-        <Center display='flex' justifyContent='space-between' width='100%' gap={3}>
+        <Center display='flex' justifyContent='center' width='100%' gap={3}>
             <Center
                 border='1px solid rgba(0, 0, 0, 0.48)'
                 borderRadius={6}
@@ -25,7 +25,12 @@ const Search = ({ title, description }: SearchProps) => (
             >
                 <FilterIcon />
             </Center>
-            <InputGroup variant='unstaled' border='1px solid rgba(0, 0, 0, 0.48)' borderRadius={4}>
+            <InputGroup
+                variant='unstaled'
+                border='1px solid rgba(0, 0, 0, 0.48)'
+                borderRadius={4}
+                maxW={404}
+            >
                 <Input
                     placeholder='Название или ингредиент...'
                     fontSize='0.875rem'

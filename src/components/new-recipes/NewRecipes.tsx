@@ -1,14 +1,16 @@
 import { Box, Heading, HStack } from '@chakra-ui/react';
 
-import mockRecipes from '~/components/new-recipes/mock-recipes';
-import RecipeCard from '~/components/new-recipes/RecipeCard';
+import mockNewRecipes from '~/components/new-recipes/mock-new-recipes';
+import NewRecipeCard from '~/components/new-recipes/NewRecipeCard';
 
 const NewRecipes = () => (
     <Box as='section' mt={8}>
-        <Heading as='h3'>Новые рецепты</Heading>
+        <Heading as='h3' fontSize='1.5rem' fontWeight={500}>
+            Новые рецепты
+        </Heading>
         <HStack spacing={3} overflowX='auto' py={3}>
-            {mockRecipes.map((recipe) => (
-                <RecipeCard key={recipe.id} recipe={recipe} />
+            {mockNewRecipes.map((recipe) => (
+                <NewRecipeCard key={recipe.id} recipe={recipe} />
             ))}
         </HStack>
     </Box>

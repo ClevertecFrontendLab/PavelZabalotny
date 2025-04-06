@@ -1,4 +1,4 @@
-import { RecipeProps } from '~/components/new-recipes/RecipeCard';
+import { RecipeProps } from '~/components/new-recipes/NewRecipeCard';
 
 const mockMostDelicious: RecipeProps[] = [
     {

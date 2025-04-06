@@ -12,7 +12,7 @@ import {
 
 import CustomProfileButton from '~/components/CustomProfileButton';
 import { BookmarksIcon, LikeIcon } from '~/components/layout/icons';
-import { RecipeProps } from '~/components/new-recipes/RecipeCard';
+import { RecipeProps } from '~/components/new-recipes/NewRecipeCard';
 
 const MostDeliciousCard = ({
     recipe: { category, icons, title, image },
@@ -23,7 +23,8 @@ const MostDeliciousCard = ({
         display='flex'
         flexDirection='row'
         maxH={32}
-        w={328}
+        w='100%'
+        flex={{ base: 'none', md: '1 1 calc(50% - 12px)' }}
         _hover={{
             boxShadow:
                 '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',

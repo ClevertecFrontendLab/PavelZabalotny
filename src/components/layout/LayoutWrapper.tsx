@@ -1,11 +1,11 @@
-import { Container, Flex, useBreakpointValue } from '@chakra-ui/react';
+import { Container, Flex, useMediaQuery } from '@chakra-ui/react';
 import { FC, PropsWithChildren } from 'react';
 
 import Footer from '~/components/layout/Footer';
 import Header from '~/components/layout/Header';
 
 const LayoutWrapper: FC<PropsWithChildren> = ({ children }) => {
-    const isMobile = useBreakpointValue({ base: true, md: false });
+    const [isLargerThan768] = useMediaQuery('(min-width: 769px)');
 
     return (
         <Flex direction='column' minH='100vh'>
@@ -15,7 +15,7 @@ const LayoutWrapper: FC<PropsWithChildren> = ({ children }) => {
                     {children}
                 </Container>
             </Flex>
-            {isMobile && <Footer />}
+            {!isLargerThan768 && <Footer />}
         </Flex>
     );
 };

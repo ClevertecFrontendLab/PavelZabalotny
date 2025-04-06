@@ -4,7 +4,7 @@ import CustomProfileButton from '~/components/CustomProfileButton';
 import { BookmarksIcon, LikeIcon, ViewsIcon } from '~/components/layout/icons';
 
 const ProfileNotification = ({ orientation = 'horizontal' }: ButtonGroupProps) => (
-    <ButtonGroup orientation={orientation} px={2}>
+    <ButtonGroup orientation={orientation} px={2} h='24px'>
         <CustomProfileButton
             leftIcon={<BookmarksIcon boxSize={3} />}
             text='185'
