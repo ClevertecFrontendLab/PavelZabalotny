@@ -6,6 +6,7 @@ const colors = {
             profile: '#2db100',
             category: '#d7ff94',
             button: '#b1ff2e',
+            culinaryBlogs: '#c4ff61',
         },
     },
 };
