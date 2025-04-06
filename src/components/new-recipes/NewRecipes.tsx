@@ -8,7 +8,7 @@ const NewRecipes = () => (
         <Heading as='h3' fontSize='1.5rem' fontWeight={500}>
             Новые рецепты
         </Heading>
-        <HStack spacing={3} overflowX='auto' py={3}>
+        <HStack spacing={3} overflowX='auto' py={3} alignItems='stretch'>
             {mockNewRecipes.map((recipe) => (
                 <NewRecipeCard key={recipe.id} recipe={recipe} />
             ))}
