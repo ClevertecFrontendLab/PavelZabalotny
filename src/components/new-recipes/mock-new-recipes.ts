@@ -15,7 +15,7 @@ const mockNewRecipes: RecipeProps[] = [
         id: '2',
         category: {
             icon: 'src/assets/icons/bay-leaf.png',
-            text: 'Веганские блюда',
+            text: 'Веганская кухня',
         },
         image: 'src/assets/images/cutlets.jpg',
         title: 'Капустные котлеты',
