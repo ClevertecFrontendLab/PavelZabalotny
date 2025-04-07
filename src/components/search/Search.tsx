@@ -1,5 +1,16 @@
 import { SearchIcon } from '@chakra-ui/icons';
-import { Box, Center, Heading, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
+import {
+    Box,
+    Center,
+    FormControl,
+    FormLabel,
+    Heading,
+    Input,
+    InputGroup,
+    InputRightElement,
+    Select,
+    Switch,
+} from '@chakra-ui/react';
 
 import { FilterIcon } from '~/components/layout/icons';
 
@@ -10,7 +21,13 @@ interface SearchProps {
 
 const Search = ({ title, description }: SearchProps) => (
     <Center as='section' flexDirection='column' gap={4}>
-        <Heading as='h3' fontSize={24} fontWeight={700} textAlign='center'>
+        <Heading
+            as='h3'
+            fontSize={{ base: '1.5rem', lg: '3rem' }}
+            fontWeight={700}
+            textAlign='center'
+            lineHeight={{ base: 1.33, lg: 1 }}
+        >
             {title}
         </Heading>
         <Box as='p' textAlign='center'>
@@ -20,21 +37,21 @@ const Search = ({ title, description }: SearchProps) => (
             <Center
                 border='1px solid rgba(0, 0, 0, 0.48)'
                 borderRadius={6}
-                boxSize={8}
+                boxSize={{ base: 8, lg: 12 }}
                 flexShrink={0}
             >
-                <FilterIcon />
+                <FilterIcon boxSize={{ base: 4, lg: 6 }} />
             </Center>
             <InputGroup
                 variant='unstaled'
                 border='1px solid rgba(0, 0, 0, 0.48)'
                 borderRadius={4}
-                maxW={404}
+                maxW={{ base: 404, lg: 458 }}
             >
                 <Input
                     placeholder='Название или ингредиент...'
-                    fontSize='0.875rem'
-                    height={8}
+                    fontSize={{ base: '0.875rem', lg: '1.125rem' }}
+                    h={{ base: 8, lg: 12 }}
                     pl={3}
                     sx={{
                         '::placeholder': {
@@ -42,11 +59,32 @@ const Search = ({ title, description }: SearchProps) => (
                         },
                     }}
                 />
-                <InputRightElement height={8}>
-                    <SearchIcon />
+                <InputRightElement h={{ base: 8, lg: 12 }}>
+                    <SearchIcon boxSize={{ base: 4, lg: '18px' }} />
                 </InputRightElement>
             </InputGroup>
         </Center>
+
+        <Box display={{ base: 'none', lg: 'flex' }} gap={4}>
+            <FormControl display='flex' alignItems='center'>
+                <FormLabel htmlFor='switch-allergens' mb='0' fontWeight={500} w={214}>
+                    Исключить мои аллергены
+                </FormLabel>
+                <Switch id='switch-allergens' />
+            </FormControl>
+            <Select
+                placeholder='Выберите из списка...'
+                color='rgba(0, 0, 0, 0.64)'
+                border='1px solid rgba(0, 0, 0, 0.08)'
+                sx={{
+                    paddingRight: '44px',
+                }}
+            >
+                <option value='option1'>Option 1</option>
+                <option value='option2'>Option 2</option>
+                <option value='option3'>Option 3</option>
+            </Select>
+        </Box>
     </Center>
 );
 
