@@ -1,5 +1,4 @@
-import { Text } from '@chakra-ui/icons';
-import { Box, Card, Image } from '@chakra-ui/react';
+import { Box, Card, Image, Text } from '@chakra-ui/react';
 
 export interface CulinaryBlogCardProps {
     id: string;

@@ -1,5 +1,4 @@
-import { Text } from '@chakra-ui/icons';
-import { Box, Heading, Stack, VStack } from '@chakra-ui/react';
+import { Box, Heading, Stack, Text, VStack } from '@chakra-ui/react';
 
 import mockVeganRecipe from '~/components/vegan-recipe/mock-vegan-recipes';
 import VeganRecipeCardFull from '~/components/vegan-recipe/VeganRecipeCardFull';

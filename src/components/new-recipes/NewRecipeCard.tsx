@@ -1,5 +1,13 @@
-import { Text } from '@chakra-ui/icons';
-import { Box, ButtonGroup, Card, CardBody, CardFooter, CardHeader, Image } from '@chakra-ui/react';
+import {
+    Box,
+    ButtonGroup,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    Image,
+    Text,
+} from '@chakra-ui/react';
 
 import CustomProfileButton from '~/components/CustomProfileButton';
 import { BookmarksIcon, LikeIcon } from '~/components/layout/icons';

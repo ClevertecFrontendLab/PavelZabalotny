@@ -1,5 +1,4 @@
-import { Text } from '@chakra-ui/icons';
-import { Box, Button, Card, Image } from '@chakra-ui/react';
+import { Box, Button, Card, Image, Text } from '@chakra-ui/react';
 
 import { VeganRecipeCardProps } from '~/components/vegan-recipe/vegan-recipes.interface';
 
