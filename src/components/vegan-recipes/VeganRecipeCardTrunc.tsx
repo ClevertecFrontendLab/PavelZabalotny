@@ -1,6 +1,6 @@
 import { Box, Button, Card, Image, Text } from '@chakra-ui/react';
 
-import { VeganRecipeCardProps } from '~/components/vegan-recipe/vegan-recipes.interface';
+import { VeganRecipeCardProps } from '~/components/vegan-recipes/vegan-recipes.interface';
 
 const VeganRecipeCardTrunc = ({
     veganRecipe: {

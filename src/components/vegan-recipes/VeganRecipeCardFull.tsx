@@ -2,7 +2,7 @@ import { Box, ButtonGroup, Card, Image, Text } from '@chakra-ui/react';
 
 import CustomProfileButton from '~/components/CustomProfileButton';
 import { BookmarksIcon, LikeIcon } from '~/components/layout/icons';
-import { VeganRecipeCardProps } from '~/components/vegan-recipe/vegan-recipes.interface';
+import { VeganRecipeCardProps } from '~/components/vegan-recipes/vegan-recipes.interface';
 
 const VeganRecipeCardFull = ({
     veganRecipe: { title, description, category, icons },
