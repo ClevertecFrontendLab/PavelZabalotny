@@ -10,6 +10,7 @@ interface CustomButtonProps {
     px?: string | number;
     py?: string | number;
     textColor?: string;
+    fontSize?: string | { base: string; lg: string };
 }
 
 const CustomProfileButton = ({
@@ -21,6 +22,7 @@ const CustomProfileButton = ({
     px,
     py,
     textColor,
+    fontSize = { base: '0.75rem', lg: '1rem' },
 }: CustomButtonProps) => (
     <Center
         flexDirection={flexDirection}
@@ -33,12 +35,7 @@ const CustomProfileButton = ({
         width={width}
     >
         {leftIcon}
-        <Box
-            as='span'
-            fontWeight={600}
-            fontSize={{ base: '0.75rem', lg: '1rem' }}
-            color={textColor}
-        >
+        <Box as='span' fontWeight={600} fontSize={fontSize} color={textColor}>
             {text}
         </Box>
     </Center>
