@@ -1,4 +1,21 @@
-import { Box, Center, Container, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react';
+import {
+    Avatar,
+    Box,
+    Center,
+    Container,
+    Flex,
+    Heading,
+    Hide,
+    HStack,
+    Image,
+    Link,
+    Show,
+    Text,
+    useMediaQuery,
+    VStack,
+    Wrap,
+    WrapItem,
+} from '@chakra-ui/react';
 
 import { BurgerMenuIcon, LogoIcon } from '~/components/layout/icons';
 import ProfileNotification from '~/components/ProfileNotification';
@@ -26,11 +43,49 @@ const Header = () => {
                             <Image src='src/assets/icons/yee-daa.svg' aria-label='yee-daa-logo' />
                         )}
                     </Link>
+
                     <Flex align='center'>
-                        <ProfileNotification />
-                        <Center>
-                            <BurgerMenuIcon boxSize={6} color='#000' aria-label='hamburger-menu' />
-                        </Center>
+                        <Hide above='lg'>
+                            <ProfileNotification />
+                            <Center>
+                                <BurgerMenuIcon
+                                    boxSize={6}
+                                    color='#000'
+                                    aria-label='hamburger-menu'
+                                />
+                            </Center>
+                        </Hide>
+                        <Show above='lg'>
+                            <HStack gap={3} mr={14} pl={10}>
+                                <Wrap>
+                                    <WrapItem>
+                                        <Avatar
+                                            name='Екатерина Константинопольская'
+                                            src='src/assets/icons/avatar.png'
+                                            size='md'
+                                        />
+                                    </WrapItem>
+                                </Wrap>
+                                <VStack align='flex-start' gap={0}>
+                                    <Heading
+                                        as='h4'
+                                        fontSize='1.125rem'
+                                        lineHeight={1.56}
+                                        fontWeight={500}
+                                    >
+                                        Екатерина Константинопольская
+                                    </Heading>
+                                    <Text
+                                        fontSize='0.875rem'
+                                        lineHeight={1.43}
+                                        color='rgba(0, 0, 0, 0.64)'
+                                        fontWeight={400}
+                                    >
+                                        @bake_and_pie
+                                    </Text>
+                                </VStack>
+                            </HStack>
+                        </Show>
                     </Flex>
                 </Flex>
             </Container>
