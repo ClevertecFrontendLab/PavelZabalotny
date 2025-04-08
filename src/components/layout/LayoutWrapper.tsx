@@ -11,7 +11,7 @@ const LayoutWrapper: FC<PropsWithChildren> = ({ children }) => {
         <Flex direction='column' minH='100vh'>
             <Header />
             <Flex as='main' flex='1'>
-                <Container maxW='container.xl' py={4}>
+                <Container maxW='container.xl' px={{ base: 4, md: 5, lg: '10px' }}>
                     {children}
                 </Container>
             </Flex>

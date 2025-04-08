@@ -9,7 +9,6 @@ interface CustomButtonProps {
     width?: string;
     px?: string | number;
     py?: string | number;
-    gap?: string | number;
     textColor?: string;
 }
 
@@ -21,7 +20,6 @@ const CustomProfileButton = ({
     width,
     px,
     py,
-    gap = '6px',
     textColor,
 }: CustomButtonProps) => (
     <Center
@@ -29,13 +27,18 @@ const CustomProfileButton = ({
         bg='transparent'
         px={px}
         py={py}
-        gap={gap}
+        gap={{ base: '6px', lg: 2 }}
         borderRadius={6}
         height={height}
         width={width}
     >
         {leftIcon}
-        <Box as='span' fontWeight={600} fontSize='0.75rem' color={textColor}>
+        <Box
+            as='span'
+            fontWeight={600}
+            fontSize={{ base: '0.75rem', lg: '1rem' }}
+            color={textColor}
+        >
             {text}
         </Box>
     </Center>

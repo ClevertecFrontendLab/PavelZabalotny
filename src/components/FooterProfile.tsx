@@ -40,7 +40,6 @@ const FooterProfile = ({ orientation = 'horizontal' }: ButtonGroupProps) => (
             text='Записать'
             flexDirection='column'
             width='90px'
-            gap='6px'
         ></CustomProfileButton>
         <CustomProfileButton
             leftIcon={<Image src={ProfileIcon} boxSize={10} />}
