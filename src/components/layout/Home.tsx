@@ -30,6 +30,11 @@ const Home = () => {
                         maxW={{ base: '100%', lg: '880px' }}
                         h='calc(100vh - 80px - 16px)'
                         overflowY='scroll'
+                        css={{
+                            '&::-webkit-scrollbar': {
+                                display: 'none',
+                            },
+                        }}
                     >
                         <Search title='Приятного аппетита!' />
                         <NewRecipes />
