@@ -1,18 +1,6 @@
-import { createBrowserRouter, RouterProvider } from 'react-router';
+import { RouterProvider } from 'react-router';
 
-import Home from '~/components/layout/Home';
-import LayoutWrapper from '~/components/layout/LayoutWrapper';
-
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: (
-            <LayoutWrapper>
-                <Home />
-            </LayoutWrapper>
-        ),
-    },
-]);
+import router from '~/router';
 
 const AppRouter = () => <RouterProvider router={router} />;
 
