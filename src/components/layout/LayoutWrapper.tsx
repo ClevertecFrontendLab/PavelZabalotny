@@ -2,7 +2,8 @@ import { Box, Container, Flex, HStack, useMediaQuery } from '@chakra-ui/react';
 import { Outlet } from 'react-router';
 
 import RightAside from '~/components/layout/aside/RightAside';
-import Footer from '~/components/layout/Footer';
+import Footer from '~/components/layout/footer/Footer';
+import FooterLeft from '~/components/layout/footer/FooterLeft';
 import Header from '~/components/layout/Header';
 
 const maxHeight = 'calc(100vh - 80px)';
@@ -21,10 +22,26 @@ const LayoutWrapper = () => {
                     pb={{ base: '110px', md: '100px', lg: 0 }}
                 >
                     <HStack gap={6} align='stretch'>
+                        {/* TODO: NavBar */}
                         {isLargerThan1440 && (
-                            <Box as='aside' w='256px' h={maxHeight} bg='green' flexShrink={0}>
+                            <Box
+                                as='aside'
+                                w='256px'
+                                h={maxHeight}
+                                bg='gray.100'
+                                flexShrink={0}
+                                position='relative'
+                            >
                                 <nav>Nav</nav>
-                                <Box as='footer'></Box>
+                                {/* TODO: Footer Left */}
+                                <Box
+                                    as='footer'
+                                    position='absolute'
+                                    bottom={0}
+                                    p='0 24px 32px 24px'
+                                >
+                                    <FooterLeft />
+                                </Box>
                             </Box>
                         )}
                         <Box
