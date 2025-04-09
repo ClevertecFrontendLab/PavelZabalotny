@@ -1,6 +1,6 @@
-import { VeganRecipeCardProps } from '~/components/vegan-recipes/vegan-recipes.interface';
+import { VeganRecipeCardProps } from '~/components/veganRecipes/vegan-recipes.interface';
 
-const mockRecipes: VeganRecipeCardProps['veganRecipe'][] = [
+const veganRecipes: VeganRecipeCardProps['veganRecipe'][] = [
     {
         id: '1',
         category: {
@@ -70,4 +70,4 @@ const mockRecipes: VeganRecipeCardProps['veganRecipe'][] = [
     },
 ];
 
-export default mockRecipes;
+export default veganRecipes;

@@ -1,6 +1,6 @@
-import { RecipeProps } from '~/components/new-recipes/NewRecipeCard';
+import { RecipeProps } from '~/components/newRecipes/NewRecipeCard';
 
-const mockNewRecipes: RecipeProps[] = [
+const newRecipes: RecipeProps[] = [
     {
         id: '1',
         category: {
@@ -75,4 +75,4 @@ const mockNewRecipes: RecipeProps[] = [
     },
 ];
 
-export default mockNewRecipes;
+export default newRecipes;

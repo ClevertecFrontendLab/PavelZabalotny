@@ -1,8 +1,8 @@
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { Box, Heading, HStack, Show } from '@chakra-ui/react';
 
-import mockNewRecipes from '~/components/new-recipes/mock-new-recipes';
-import NewRecipeCard from '~/components/new-recipes/NewRecipeCard';
+import newRecipes from '~/components/mosks/newRecipes.mock';
+import NewRecipeCard from '~/components/newRecipes/NewRecipeCard';
 import SliderButton from '~/components/SliderButton';
 
 const NewRecipes = () => (
@@ -28,7 +28,7 @@ const NewRecipes = () => (
                 },
             }}
         >
-            {mockNewRecipes.map((recipe) => (
+            {newRecipes.map((recipe) => (
                 <NewRecipeCard key={recipe.id} recipe={recipe} />
             ))}
         </HStack>

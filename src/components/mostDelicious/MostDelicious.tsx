@@ -1,8 +1,8 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Box, Button, Heading, HStack, Stack, useMediaQuery } from '@chakra-ui/react';
 
-import mockMostDelicious from '~/components/most-delicious/mock-most-delicious';
-import MostDeliciousCard from '~/components/most-delicious/MostDeliciousCard';
+import mostDelicious from '~/components/mosks/mostDelicious.mock';
+import MostDeliciousCard from '~/components/mostDelicious/MostDeliciousCard';
 
 const MostDelicious = () => {
     const [isLargerThan768] = useMediaQuery('(min-width: 769px)');
@@ -41,7 +41,7 @@ const MostDelicious = () => {
                 flexWrap={{ base: 'nowrap', md: 'wrap' }}
                 align='center'
             >
-                {mockMostDelicious.map((recipe) => (
+                {mostDelicious.map((recipe) => (
                     <MostDeliciousCard key={recipe.id} recipe={recipe} />
                 ))}
             </Stack>

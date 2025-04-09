@@ -14,7 +14,7 @@ import {
 
 import CustomProfileButton from '~/components/CustomProfileButton';
 import { BookmarksIcon, LikeIcon } from '~/components/layout/icons';
-import { MostDeliciousProps } from '~/components/most-delicious/mock-most-delicious';
+import { MostDeliciousProps } from '~/components/mosks/mostDelicious.mock';
 
 const MostDeliciousCard = ({
     recipe: { category, icons, title, description, image, recommendedBy },

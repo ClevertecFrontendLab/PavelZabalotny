@@ -1,8 +1,8 @@
-import CulinaryBlogs from '~/components/culinary-blogs/CulinaryBlogs';
-import MostDelicious from '~/components/most-delicious/MostDelicious';
-import NewRecipes from '~/components/new-recipes/NewRecipes';
+import CulinaryBlogs from '~/components/culinaryBlogs/CulinaryBlogs';
+import MostDelicious from '~/components/mostDelicious/MostDelicious';
+import NewRecipes from '~/components/newRecipes/NewRecipes';
 import Search from '~/components/search/Search';
-import VeganRecipes from '~/components/vegan-recipes/VeganRecipes';
+import VeganRecipes from '~/components/veganRecipes/VeganRecipes';
 
 const Home = () => (
     <>

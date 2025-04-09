@@ -1,8 +1,8 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Box, Button, Heading, HStack, Stack } from '@chakra-ui/react';
 
-import CulinaryBlogCard from '~/components/culinary-blogs/CulinaryBlogCard';
-import mockCulinaryBlogs from '~/components/culinary-blogs/mock-culinary-blogs';
+import CulinaryBlogCard from '~/components/culinaryBlogs/CulinaryBlogCard';
+import mockCulinaryBlogs from '~/components/culinaryBlogs/mock-culinary-blogs';
 
 const CulinaryBlogs = () => (
     <Box

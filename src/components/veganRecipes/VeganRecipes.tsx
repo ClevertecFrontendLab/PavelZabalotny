@@ -1,8 +1,8 @@
 import { Box, Heading, Stack, Text, VStack } from '@chakra-ui/react';
 
-import mockVeganRecipe from '~/components/vegan-recipes/mock-vegan-recipes';
-import VeganRecipeCardFull from '~/components/vegan-recipes/VeganRecipeCardFull';
-import VeganRecipeCardTrunc from '~/components/vegan-recipes/VeganRecipeCardTrunc';
+import mockVeganRecipe from '~/components/mosks/veganRecipes.mock';
+import VeganRecipeCardFull from '~/components/veganRecipes/VeganRecipeCardFull';
+import VeganRecipeCardTrunc from '~/components/veganRecipes/VeganRecipeCardTrunc';
 
 const VeganRecipes = () => {
     const mockVeganRecipeFull = mockVeganRecipe.slice(0, 2);

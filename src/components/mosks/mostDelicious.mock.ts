@@ -1,4 +1,4 @@
-import { RecipeProps } from '~/components/new-recipes/NewRecipeCard';
+import { RecipeProps } from '~/components/newRecipes/NewRecipeCard';
 
 export interface MostDeliciousProps extends RecipeProps {
     description: string;
@@ -8,7 +8,7 @@ export interface MostDeliciousProps extends RecipeProps {
     };
 }
 
-const mockMostDelicious: MostDeliciousProps[] = [
+const mostDelicious: MostDeliciousProps[] = [
     {
         id: '1',
         image: 'src/assets/images/dish-1.jpg',
@@ -79,4 +79,4 @@ const mockMostDelicious: MostDeliciousProps[] = [
     },
 ];
 
-export default mockMostDelicious;
+export default mostDelicious;
