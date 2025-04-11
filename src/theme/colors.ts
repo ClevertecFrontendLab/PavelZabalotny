@@ -8,6 +8,7 @@ const colors = {
             button: '#b1ff2e',
             culinaryBlogs: '#c4ff61',
         },
+        navi: '#eaffc7',
     },
 };
 

@@ -1,6 +1,7 @@
 import { Box, Container, Flex, HStack, useMediaQuery } from '@chakra-ui/react';
 import { Outlet } from 'react-router';
 
+import Navigation from '~/components/layout/aside/navigation';
 import RightAside from '~/components/layout/aside/RightAside';
 import Footer from '~/components/layout/footer/Footer';
 import FooterLeft from '~/components/layout/footer/FooterLeft';
@@ -22,18 +23,15 @@ const LayoutWrapper = () => {
                     pb={{ base: '110px', md: '100px', lg: 0 }}
                 >
                     <HStack gap={6} align='stretch'>
-                        {/* TODO: NavBar */}
                         {isLargerThan1440 && (
                             <Box
                                 as='aside'
                                 w='256px'
                                 h={maxHeight}
-                                bg='gray.100'
                                 flexShrink={0}
                                 position='relative'
                             >
-                                <nav>Nav</nav>
-                                {/* TODO: Footer Left */}
+                                <Navigation />
                                 <Box
                                     as='footer'
                                     position='absolute'
