@@ -45,7 +45,7 @@ const Header = () => {
                     <Link href='/' display='inline-flex' gap={2}>
                         <LogoIcon boxSize={8} color='brand.green.logo' aria-label='yee-daa-logo' />
                         {is768AndLarge && (
-                            <Image src='src/assets/icons/yee-daa.svg' aria-label='yee-daa-logo' />
+                            <Image src='/src/assets/icons/yee-daa.svg' aria-label='yee-daa-logo' />
                         )}
                     </Link>
 
@@ -71,7 +71,7 @@ const Header = () => {
                                     <WrapItem>
                                         <Avatar
                                             name='Екатерина Константинопольская'
-                                            src='src/assets/icons/avatar.png'
+                                            src='/src/assets/icons/avatar.png'
                                             size='md'
                                         />
                                     </WrapItem>

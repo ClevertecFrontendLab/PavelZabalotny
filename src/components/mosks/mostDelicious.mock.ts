@@ -11,9 +11,9 @@ export interface MostDeliciousProps extends RecipeProps {
 const mostDelicious: MostDeliciousProps[] = [
     {
         id: '1',
-        image: 'src/assets/images/dish-1.jpg',
+        image: '/src/assets/images/dish-1.jpg',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Кнели со спагетти',
@@ -26,9 +26,9 @@ const mostDelicious: MostDeliciousProps[] = [
     },
     {
         id: '2',
-        image: 'src/assets/images/dish-2.jpg',
+        image: '/src/assets/images/dish-2.jpg',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Пряная ветчина по итальянски',
@@ -39,15 +39,15 @@ const mostDelicious: MostDeliciousProps[] = [
             { leftIcon: 'like', text: '257' },
         ],
         recommendedBy: {
-            avatar: 'src/assets/images/elenapovar.png',
+            avatar: '/src/assets/images/elenapovar.png',
             userName: 'Елена Высоцкая',
         },
     },
     {
         id: '3',
-        image: 'src/assets/images/dish-3.jpg',
+        image: '/src/assets/images/dish-3.jpg',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Лапша с курицей и шафраном',
@@ -58,15 +58,15 @@ const mostDelicious: MostDeliciousProps[] = [
             { leftIcon: 'like', text: '342' },
         ],
         recommendedBy: {
-            avatar: 'src/assets/images/funtasticooking.png',
+            avatar: '/src/assets/images/funtasticooking.png',
             userName: 'Alex Cook',
         },
     },
     {
         id: '4',
-        image: 'src/assets/images/dish-4.jpg',
+        image: '/src/assets/images/dish-4.jpg',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Национальные',
         },
         title: 'Том-ям с капустой кимчи',
@@ -79,9 +79,9 @@ const mostDelicious: MostDeliciousProps[] = [
     },
     {
         id: '5',
-        image: 'src/assets/images/dish-1.jpg',
+        image: '/src/assets/images/dish-1.jpg',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Кнели со спагетти',
@@ -94,9 +94,9 @@ const mostDelicious: MostDeliciousProps[] = [
     },
     {
         id: '6',
-        image: 'src/assets/images/dish-2.jpg',
+        image: '/src/assets/images/dish-2.jpg',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Пряная ветчина по итальянски',
@@ -107,15 +107,15 @@ const mostDelicious: MostDeliciousProps[] = [
             { leftIcon: 'like', text: '257' },
         ],
         recommendedBy: {
-            avatar: 'src/assets/images/elenapovar.png',
+            avatar: '/src/assets/images/elenapovar.png',
             userName: 'Елена Высоцкая',
         },
     },
     {
         id: '7',
-        image: 'src/assets/images/dish-3.jpg',
+        image: '/src/assets/images/dish-3.jpg',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Лапша с курицей и шафраном',
@@ -126,15 +126,15 @@ const mostDelicious: MostDeliciousProps[] = [
             { leftIcon: 'like', text: '342' },
         ],
         recommendedBy: {
-            avatar: 'src/assets/images/funtasticooking.png',
+            avatar: '/src/assets/images/funtasticooking.png',
             userName: 'Alex Cook',
         },
     },
     {
         id: '8',
-        image: 'src/assets/images/dish-4.jpg',
+        image: '/src/assets/images/dish-4.jpg',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Национальные',
         },
         title: 'Том-ям с капустой кимчи',

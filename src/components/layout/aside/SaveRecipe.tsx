@@ -1,5 +1,7 @@
 import { Center, Image, Text } from '@chakra-ui/react';
 
+import SaveRecipeIcon from '/src/assets/icons/save-recipe-icon.svg';
+
 const SaveRecipe = () => (
     <Center
         boxSize={52}
@@ -10,7 +12,7 @@ const SaveRecipe = () => (
         flexDirection='column'
         cursor='pointer'
     >
-        <Image src='src/assets/icons/save-recipe-icon.svg' />
+        <Image src={SaveRecipeIcon} />
         <Text
             fontSize='0.75rem'
             fontWeight={400}

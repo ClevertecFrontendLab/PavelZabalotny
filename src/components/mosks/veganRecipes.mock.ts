@@ -4,7 +4,7 @@ const veganRecipes: VeganRecipeCardProps['veganRecipe'][] = [
     {
         id: '1',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Картошка, тушенная с болгарским перцем и фасолью в томатном соусе',
@@ -18,7 +18,7 @@ const veganRecipes: VeganRecipeCardProps['veganRecipe'][] = [
     {
         id: '2',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Капустные котлеты',
@@ -32,7 +32,7 @@ const veganRecipes: VeganRecipeCardProps['veganRecipe'][] = [
     {
         id: '3',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Стейк для вегетарианцев',
@@ -45,7 +45,7 @@ const veganRecipes: VeganRecipeCardProps['veganRecipe'][] = [
     {
         id: '4',
         category: {
-            icon: 'src/assets/icons/pan-icon.png',
+            icon: '/src/assets/icons/pan-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Котлеты из гречки и фасоли',
@@ -58,7 +58,7 @@ const veganRecipes: VeganRecipeCardProps['veganRecipe'][] = [
     {
         id: '5',
         category: {
-            icon: 'src/assets/icons/pot-icon.png',
+            icon: '/src/assets/icons/pot-icon.png',
             text: 'Вторые блюда',
         },
         title: 'Сырный суп с лапшой и брокколи',

@@ -3,7 +3,7 @@ import { CulinaryBlogCardProps } from '~/components/culinaryBlogs/CulinaryBlogCa
 const culinaryBlogsMock: CulinaryBlogCardProps[] = [
     {
         id: '1',
-        avatar: 'src/assets/images/elenapovar.png',
+        avatar: '/src/assets/images/elenapovar.png',
         userName: 'Елена Высоцкая',
         profileTag: '@elenapovar',
         description:
@@ -11,7 +11,7 @@ const culinaryBlogsMock: CulinaryBlogCardProps[] = [
     },
     {
         id: '2',
-        avatar: 'src/assets/images/funtasticooking.png',
+        avatar: '/src/assets/images/funtasticooking.png',
         userName: 'Alex Cook',
         profileTag: '@funtasticooking',
         description:
@@ -19,7 +19,7 @@ const culinaryBlogsMock: CulinaryBlogCardProps[] = [
     },
     {
         id: '3',
-        avatar: 'src/assets/images/bake_and_pie.png',
+        avatar: '/src/assets/images/bake_and_pie.png',
         userName: 'Екатерина Константинопольская',
         profileTag: '@bake_and_pie',
         description:

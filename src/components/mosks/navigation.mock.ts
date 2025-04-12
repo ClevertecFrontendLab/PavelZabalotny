@@ -14,7 +14,7 @@ export const navigation: Category[] = [
     {
         id: 'salads',
         name: 'Салаты',
-        icon: 'src/assets/icons/nav/salad.svg',
+        icon: '/src/assets/icons/nav/salad.svg',
         subCategories: [
             { id: 'meat-salads', name: 'Мясные салаты' },
             { id: 'fish-salads', name: 'Рыбные салаты' },
@@ -25,7 +25,7 @@ export const navigation: Category[] = [
     {
         id: 'snacks',
         name: 'Закуски',
-        icon: 'src/assets/icons/nav/snack.svg',
+        icon: '/src/assets/icons/nav/snack.svg',
         subCategories: [
             { id: 'meat-snacks', name: 'Мясные закуски' },
             { id: 'fish-snacks', name: 'Рыбные закуски' },
@@ -38,7 +38,7 @@ export const navigation: Category[] = [
     {
         id: 'first-courses',
         name: 'Первые блюда',
-        icon: 'src/assets/icons/nav/soup.svg',
+        icon: '/src/assets/icons/nav/soup.svg',
         subCategories: [
             { id: 'meat-soups', name: 'Мясные супы' },
             { id: 'vegetable-soups', name: 'Овощные супы' },
@@ -50,7 +50,7 @@ export const navigation: Category[] = [
     {
         id: 'second-courses',
         name: 'Вторые блюда',
-        icon: 'src/assets/icons/nav/main-course.svg',
+        icon: '/src/assets/icons/nav/main-course.svg',
         subCategories: [
             { id: 'meat', name: 'Мясные' },
             { id: 'fish', name: 'Рыбные' },
@@ -69,7 +69,7 @@ export const navigation: Category[] = [
     {
         id: 'desserts',
         name: 'Десерты, выпечка',
-        icon: 'src/assets/icons/nav/dessert.svg',
+        icon: '/src/assets/icons/nav/dessert.svg',
         subCategories: [
             { id: 'pancakes', name: 'Блины и оладьи' },
             { id: 'pies', name: 'Пироги и пончики' },
@@ -89,7 +89,7 @@ export const navigation: Category[] = [
     {
         id: 'grill',
         name: 'Блюда на гриле',
-        icon: 'src/assets/icons/nav/grill.svg',
+        icon: '/src/assets/icons/nav/grill.svg',
         subCategories: [
             { id: 'grill-beef', name: 'Говядина' },
             { id: 'grill-pork', name: 'Свинина' },
@@ -102,7 +102,7 @@ export const navigation: Category[] = [
     {
         id: 'vegan',
         name: 'Веганская кухня',
-        icon: 'src/assets/icons/nav/vegan.svg',
+        icon: '/src/assets/icons/nav/vegan.svg',
         subCategories: [
             { id: 'vegan-snacks', name: 'Закуски' },
             { id: 'vegan-first', name: 'Первые блюда' },
@@ -117,7 +117,7 @@ export const navigation: Category[] = [
     {
         id: 'kids',
         name: 'Детские блюда',
-        icon: 'src/assets/icons/nav/kids.svg',
+        icon: '/src/assets/icons/nav/kids.svg',
         subCategories: [
             { id: 'kids-first', name: 'Первые блюда' },
             { id: 'kids-second', name: 'Вторые блюда' },
@@ -132,7 +132,7 @@ export const navigation: Category[] = [
     {
         id: 'medical',
         name: 'Лечебное питание',
-        icon: 'src/assets/icons/nav/medical.svg',
+        icon: '/src/assets/icons/nav/medical.svg',
         subCategories: [
             { id: 'kids-diet', name: 'Детская диета' },
             { id: 'diet-1', name: 'Диета №1' },
@@ -155,7 +155,7 @@ export const navigation: Category[] = [
     {
         id: 'national',
         name: 'Национальные',
-        icon: 'src/assets/icons/nav/national.svg',
+        icon: '/src/assets/icons/nav/national.svg',
         subCategories: [
             { id: 'american', name: 'Американская кухня' },
             { id: 'armenian', name: 'Армянская кухня' },
@@ -177,7 +177,7 @@ export const navigation: Category[] = [
     {
         id: 'sauces',
         name: 'Соусы',
-        icon: 'src/assets/icons/nav/sauce.svg',
+        icon: '/src/assets/icons/nav/sauce.svg',
         subCategories: [
             { id: 'meat-sauces', name: 'Соусы мясные' },
             { id: 'cheese-sauces', name: 'Соусы сырные' },
@@ -196,7 +196,7 @@ export const navigation: Category[] = [
     {
         id: 'drinks',
         name: 'Напитки',
-        icon: 'src/assets/icons/nav/drink.svg',
+        icon: '/src/assets/icons/nav/drink.svg',
         subCategories: [
             { id: 'juices', name: 'Соки и фреши' },
             { id: 'smoothies', name: 'Смузи' },
@@ -212,7 +212,7 @@ export const navigation: Category[] = [
     {
         id: 'preserves',
         name: 'Заготовки',
-        icon: 'src/assets/icons/nav/preserves.svg',
+        icon: '/src/assets/icons/nav/preserves.svg',
         subCategories: [
             { id: 'meat-preserves', name: 'Мясные заготовки' },
             { id: 'fish-preserves', name: 'Рыбные заготовки' },
