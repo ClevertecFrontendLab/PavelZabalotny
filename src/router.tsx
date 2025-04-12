@@ -2,7 +2,8 @@ import { createBrowserRouter } from 'react-router';
 
 import Home from '~/components/layout/Home';
 import LayoutWrapper from '~/components/layout/LayoutWrapper';
-import VeganCuisine from '~/pages/VeganCuisine/VeganCuisine';
+import MostDeliciousPage from '~/pages/MostDeliciousPage';
+import VeganCuisinePage from '~/pages/VeganCuisinePage';
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'vegan-cuisine',
-                Component: VeganCuisine,
+                Component: VeganCuisinePage,
+            },
+            {
+                path: 'most-delicious',
+                Component: MostDeliciousPage,
             },
         ],
     },
