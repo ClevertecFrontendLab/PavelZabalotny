@@ -2,7 +2,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Box, Button, Heading, HStack, Stack } from '@chakra-ui/react';
 
 import CulinaryBlogCard from '~/components/culinaryBlogs/CulinaryBlogCard';
-import mockCulinaryBlogs from '~/components/culinaryBlogs/mock-culinary-blogs';
+import culinaryBlogsMock from '~/components/mosks/culinaryBlogs.mock';
 
 const CulinaryBlogs = () => (
     <Box
@@ -34,7 +34,7 @@ const CulinaryBlogs = () => (
         </HStack>
 
         <Stack direction={['column', 'column', 'row']} mt={3} gap={{ base: 3, lg: 4 }}>
-            {mockCulinaryBlogs.map((culinaryBlog) => (
+            {culinaryBlogsMock.map((culinaryBlog) => (
                 <CulinaryBlogCard culinaryBlog={culinaryBlog} key={culinaryBlog.id} />
             ))}
         </Stack>

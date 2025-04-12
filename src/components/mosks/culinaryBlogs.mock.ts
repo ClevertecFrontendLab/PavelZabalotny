@@ -1,6 +1,6 @@
 import { CulinaryBlogCardProps } from '~/components/culinaryBlogs/CulinaryBlogCard';
 
-const mockCulinaryBlogs: CulinaryBlogCardProps[] = [
+const culinaryBlogsMock: CulinaryBlogCardProps[] = [
     {
         id: '1',
         avatar: 'src/assets/images/elenapovar.png',
@@ -27,4 +27,4 @@ const mockCulinaryBlogs: CulinaryBlogCardProps[] = [
     },
 ];
 
-export default mockCulinaryBlogs;
+export default culinaryBlogsMock;
