@@ -1,5 +1,6 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Box, Button, Heading, HStack, Stack, useMediaQuery } from '@chakra-ui/react';
+import { NavLink } from 'react-router';
 
 import mostDelicious from '~/components/mosks/mostDelicious.mock';
 import MostDeliciousCard from '~/components/mostDelicious/MostDeliciousCard';
@@ -26,6 +27,8 @@ const MostDelicious = () => {
                     Самое сочное
                 </Heading>
                 <Button
+                    as={NavLink}
+                    to='/most-delicious'
                     display={isLargerThan768 ? 'inline-flex' : 'none'}
                     bg='brand.green.button'
                     rightIcon={<ArrowForwardIcon />}
@@ -51,7 +54,8 @@ const MostDelicious = () => {
                 mx='auto'
                 bg='brand.green.button'
                 rightIcon={<ArrowForwardIcon />}
-                data-test-id={isLargerThan768 ? null : 'juiciest-link-mobile'}
+                data-test-id='juiciest-link-mobile'
+                visibility={isLargerThan768 ? 'hidden' : 'visible'}
             >
                 Вся подборка
             </Button>
