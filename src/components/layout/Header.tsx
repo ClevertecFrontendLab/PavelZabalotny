@@ -17,18 +17,18 @@ import {
     WrapItem,
 } from '@chakra-ui/react';
 
+import Breadcrumbs from '~/components/Breadcrumbs';
 import { BurgerMenuIcon, LogoIcon } from '~/components/layout/icons';
 import ProfileNotification from '~/components/ProfileNotification';
 
 const Header = () => {
-    const [isLargerThan768] = useMediaQuery('(min-width: 769px)');
     const [is768AndLarge] = useMediaQuery('(min-width: 768px)');
 
     return (
         <Box
             as='header'
             bg='brand.yellow'
-            position={!isLargerThan768 ? 'fixed' : 'static'}
+            position='fixed'
             top='0'
             left='0'
             w='100%'
@@ -36,7 +36,12 @@ const Header = () => {
             data-test-id='header'
         >
             <Container maxW='container.xl' py={4}>
-                <Flex justify='space-between' align='center'>
+                <Flex
+                    justify='space-between'
+                    align='center'
+                    justifyContent='flex-start'
+                    gap='144px'
+                >
                     <Link href='/' display='inline-flex' gap={2}>
                         <LogoIcon boxSize={8} color='brand.green.logo' aria-label='yee-daa-logo' />
                         {is768AndLarge && (
@@ -44,7 +49,8 @@ const Header = () => {
                         )}
                     </Link>
 
-                    <Flex align='center'>
+                    <Flex align='center' w='100%' justifyContent='space-between'>
+                        <Breadcrumbs />
                         <Hide above='lg'>
                             <ProfileNotification />
                             <Center>
@@ -66,6 +72,7 @@ const Header = () => {
                                         />
                                     </WrapItem>
                                 </Wrap>
+
                                 <VStack align='flex-start' gap={0}>
                                     <Heading
                                         as='h4'
