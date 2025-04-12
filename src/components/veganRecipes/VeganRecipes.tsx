@@ -1,4 +1,4 @@
-import { Box, Heading, Stack, Text, VStack } from '@chakra-ui/react';
+import { Box, Heading, Hide, Stack, Text, VStack } from '@chakra-ui/react';
 
 import mockVeganRecipe from '~/components/mosks/veganRecipes.mock';
 import VeganRecipeCardFull from '~/components/veganRecipes/VeganRecipeCardFull';
@@ -49,6 +49,9 @@ const VeganRecipes = () => {
                     ))}
                 </VStack>
             </Stack>
+            <Hide above='lg'>
+                <Box h={{ base: '100px' }}></Box>
+            </Hide>
         </Box>
     );
 };

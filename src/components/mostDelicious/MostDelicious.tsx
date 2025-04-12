@@ -54,6 +54,8 @@ const MostDelicious: FC<MostDeliciousProps> = ({ maxItems }) => {
                 ))}
             </Stack>
             <Button
+                as={NavLink}
+                to='/most-delicious'
                 display={isLargerThan768 ? 'none' : 'inline-flex'}
                 mt={3}
                 mx='auto'
