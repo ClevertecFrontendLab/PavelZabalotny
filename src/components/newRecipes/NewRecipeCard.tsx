@@ -32,7 +32,7 @@ const NewRecipeCard = ({
     recipe: RecipeProps;
 }) => (
     <Card
-        minW={{ base: '158px', lg: '277px' }}
+        minW={{ base: '158px', lg: '277px', xl: '322px' }}
         borderRadius={8}
         pb={{ lg: 3 }}
         _hover={{
@@ -61,14 +61,21 @@ const NewRecipeCard = ({
             )}
         </Hide>
         <CardHeader p={0}>
-            <Image objectFit='cover' src={image} alt='Chakra UI' borderTopRadius={8} />
+            <Image
+                objectFit='cover'
+                src={image}
+                alt='Chakra UI'
+                borderTopRadius={8}
+                w={{ base: '158px', lg: '277px', xl: '322px' }}
+                h={{ base: '128px', lg: '230px' }}
+            />
         </CardHeader>
         <CardBody p={{ base: 2, lg: 3 }}>
             <Text
                 noOfLines={{ base: 2, lg: 1 }}
                 as='h3'
-                fontSize={{ base: '1rem', lg: '1.125rem' }}
-                lineHeight={1.5}
+                fontSize={{ base: '1rem', lg: '1.125rem', xl: '1.25rem' }}
+                lineHeight={{ base: 1.5, xl: 1.4 }}
                 fontWeight={500}
             >
                 {title}

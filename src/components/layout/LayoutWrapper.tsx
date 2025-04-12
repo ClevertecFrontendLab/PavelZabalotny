@@ -14,9 +14,9 @@ const LayoutWrapper = () => {
     const [isLargerThan1440] = useMediaQuery('(min-width: 1440px)');
 
     return (
-        <Flex direction='column' minH='100vh'>
+        <Flex direction='column'>
             <Header />
-            <Flex as='main' flex='1' mt='84px'>
+            <Flex as='main' flex='1' mt={{ base: '64px', lg: '80px' }}>
                 <Container
                     maxW='container.xl'
                     px={{ base: 4, md: 5, lg: '10px' }}
@@ -37,9 +37,9 @@ const LayoutWrapper = () => {
                             </Box>
                         )}
                         <Box
-                            maxW={{ base: '100%', lg: '880px' }}
+                            maxW={{ base: '100%', lg: '880px', xl: '1360px' }}
                             h={maxHeight}
-                            pt={8}
+                            pt={{ base: 4, lg: 8 }}
                             ml={{ base: 0, lg: '280px' }}
                             css={{
                                 '&::-webkit-scrollbar': {

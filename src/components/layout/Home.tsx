@@ -8,7 +8,7 @@ const Home = () => (
     <>
         <Search title='Приятного аппетита!' />
         <NewRecipes />
-        <MostDelicious />
+        <MostDelicious maxItems={4} />
         <CulinaryBlogs />
         <VeganRecipes />
     </>

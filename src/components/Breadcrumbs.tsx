@@ -14,7 +14,7 @@ export const Breadcrumbs = () => {
     const pathnames = pathname.split('/').filter(Boolean);
 
     return (
-        <Breadcrumb separator='>' fontSize='sm' padding={4}>
+        <Breadcrumb separator='>' fontSize='sm' padding={4} display={{ base: 'none', xl: 'flex' }}>
             <BreadcrumbItem key='home'>
                 <BreadcrumbLink as={NavLink} to='/'>
                     Главная

@@ -6,7 +6,6 @@ import {
     CardBody,
     CardHeader,
     Center,
-    Heading,
     HStack,
     Image,
     Text,
@@ -24,15 +23,14 @@ const MostDeliciousCard = ({
     <Card
         display='flex'
         flexDirection='row'
-        // maxH={32}
         w='100%'
-        flex={{ base: 'none', md: '1 1 calc(50% - 12px)' }}
+        flex={{ base: 'none', md: '1 1 calc(50% - 12px)', xl: '1 1 calc(50% - 20px)' }}
         _hover={{
             boxShadow:
                 '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',
         }}
     >
-        <CardHeader p={0}>
+        <CardHeader p={0} flexShrink={0}>
             <Box
                 position='absolute'
                 display={{ base: 'flex', lg: 'none' }}
@@ -70,8 +68,8 @@ const MostDeliciousCard = ({
                 src={image}
                 alt='Chakra UI'
                 borderLeftRadius={8}
-                h={{ base: '128px', lg: '244px' }}
                 w={{ base: '158px', lg: '346px' }}
+                h={{ base: '128px', lg: '244px' }}
                 objectFit='fill'
             />
         </CardHeader>
@@ -81,6 +79,7 @@ const MostDeliciousCard = ({
             display='flex'
             flexDirection='column'
             justifyContent='space-between'
+            maxW={{ xl: '322px' }}
         >
             <Box>
                 <HStack justifyContent='space-between'>
@@ -111,16 +110,18 @@ const MostDeliciousCard = ({
                     </ButtonGroup>
                 </HStack>
 
-                <Heading
+                <Text
+                    noOfLines={{ base: 0, xl: 1 }}
                     as='h3'
                     fontSize={{ base: '1rem', lg: '1.25rem' }}
                     lineHeight={{ base: 1.5, lg: 1.4 }}
                     mt={{ base: 0, lg: 6 }}
                 >
                     {title}
-                </Heading>
+                </Text>
                 <Text
-                    display={{ base: 'none', lg: 'block' }}
+                    noOfLines={3}
+                    display={{ base: 'none', lg: '-webkit-box' }}
                     fontWeight={400}
                     fontSize='0.875rem'
                     mt={2}

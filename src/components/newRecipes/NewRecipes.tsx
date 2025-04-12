@@ -9,18 +9,18 @@ const NewRecipes = () => (
     <Box as='section' mt={8} position='relative' overflow='hidden'>
         <Heading
             as='h3'
-            fontSize={{ base: '1.5rem', lg: '2.25rem' }}
+            fontSize={{ base: '1.5rem', lg: '2.25rem', xl: '3rem' }}
+            lineHeight={{ base: 1.33, lg: 1.11, xl: 1 }}
             fontWeight={500}
-            lineHeight={{ base: 1.33, lg: 1.11 }}
         >
             Новые рецепты
         </Heading>
 
         <HStack
-            spacing={3}
+            spacing={{ base: 3, xl: 6 }}
             position='relative'
             overflowX='auto'
-            py={3}
+            py={{ base: 3, xl: 4 }}
             alignItems='stretch'
             css={{
                 '&::-webkit-scrollbar': {

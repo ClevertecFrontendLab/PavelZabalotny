@@ -1,11 +1,16 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Box, Button, Heading, HStack, Stack, useMediaQuery } from '@chakra-ui/react';
+import { FC } from 'react';
 import { NavLink } from 'react-router';
 
 import mostDelicious from '~/components/mosks/mostDelicious.mock';
 import MostDeliciousCard from '~/components/mostDelicious/MostDeliciousCard';
 
-const MostDelicious = () => {
+interface MostDeliciousProps {
+    maxItems: number;
+}
+
+const MostDelicious: FC<MostDeliciousProps> = ({ maxItems }) => {
     const [isLargerThan768] = useMediaQuery('(min-width: 769px)');
 
     return (
@@ -15,13 +20,13 @@ const MostDelicious = () => {
             display='flex'
             flexDirection='column'
             justifyContent='center'
-            gap={3}
+            gap={{ base: 3, lg: 4, xl: 5 }}
         >
             <HStack justifyContent='space-between'>
                 <Heading
                     as='h3'
-                    fontSize={{ base: '1.5rem', lg: '2.25rem' }}
-                    lineHeight={{ base: '1.33', lg: '1.11' }}
+                    fontSize={{ base: '1.5rem', lg: '2.25rem', xl: '3rem' }}
+                    lineHeight={{ base: 1.33, lg: 1.11, xl: 1 }}
                     fontWeight={500}
                 >
                     Самое сочное
@@ -39,12 +44,12 @@ const MostDelicious = () => {
             </HStack>
 
             <Stack
-                spacing={3}
-                direction={{ base: 'column', md: 'row', lg: 'column' }}
+                spacing={{ base: 3, xl: 6 }}
+                direction={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
                 flexWrap={{ base: 'nowrap', md: 'wrap' }}
                 align='center'
             >
-                {mostDelicious.map((recipe) => (
+                {mostDelicious.slice(0, maxItems).map((recipe) => (
                     <MostDeliciousCard key={recipe.id} recipe={recipe} />
                 ))}
             </Stack>

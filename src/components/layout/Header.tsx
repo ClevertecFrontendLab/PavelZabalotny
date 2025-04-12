@@ -40,7 +40,7 @@ const Header = () => {
                     justify='space-between'
                     align='center'
                     justifyContent='flex-start'
-                    gap='144px'
+                    gap={{ xl: '144px' }}
                 >
                     <Link href='/' display='inline-flex' gap={2}>
                         <LogoIcon boxSize={8} color='brand.green.logo' aria-label='yee-daa-logo' />
@@ -49,7 +49,11 @@ const Header = () => {
                         )}
                     </Link>
 
-                    <Flex align='center' w='100%' justifyContent='space-between'>
+                    <Flex
+                        align='center'
+                        w='100%'
+                        justifyContent={{ base: 'flex-end', xl: 'space-between' }}
+                    >
                         <Breadcrumbs />
                         <Hide above='lg'>
                             <ProfileNotification />

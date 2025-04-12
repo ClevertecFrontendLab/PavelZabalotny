@@ -17,9 +17,9 @@ const CulinaryBlogs = () => (
         <HStack justify='space-between'>
             <Heading
                 as='h3'
-                fontSize={{ base: '1.5rem', lg: '1.875rem' }}
-                lineHeight={{ base: 1.33, lg: 1.2 }}
-                fontWeight={500}
+                fontSize={{ base: '1.5rem', lg: '1.875rem', xl: '2.25rem' }}
+                lineHeight={{ base: 1.33, lg: 1.2, xl: 1.11 }}
+                fontWeight={{ base: 500, xl: 400 }}
             >
                 Кулинарные блоги
             </Heading>
@@ -33,7 +33,11 @@ const CulinaryBlogs = () => (
             </Button>
         </HStack>
 
-        <Stack direction={['column', 'column', 'row']} mt={3} gap={{ base: 3, lg: 4 }}>
+        <Stack
+            direction={['column', 'column', 'row']}
+            mt={{ base: 3, lg: 4, xl: 6 }}
+            gap={{ base: 3, lg: 4 }}
+        >
             {culinaryBlogsMock.map((culinaryBlog) => (
                 <CulinaryBlogCard culinaryBlog={culinaryBlog} key={culinaryBlog.id} />
             ))}

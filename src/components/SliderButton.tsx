@@ -28,7 +28,7 @@ const SliderButton: FC<SliderButtonProps> = ({
         bottom={bottom}
         left={left}
         right={right}
-        zIndex={99}
+        zIndex={9}
     ></Button>
 );
 
