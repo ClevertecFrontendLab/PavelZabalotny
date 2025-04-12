@@ -1,7 +1,7 @@
 const styles = {
     global: {
-        'html, body': {
-            // fontFamily: 'Inter, Roboto, sans-serif',
+        html: {
+            overflowY: 'auto',
         },
     },
 };
