@@ -1,4 +1,3 @@
-// components/Breadcrumbs.tsx
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { NavLink, useLocation } from 'react-router';
 

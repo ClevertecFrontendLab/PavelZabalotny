@@ -20,8 +20,6 @@ const Navigation = () => {
 
     const handleCategoryClick = (category: Category) => {
         if (category.subCategories?.length > 0) {
-            // Go to the first subcategory
-            // navigate(category.subCategories[0].path);
             navigate('vegan-cuisine');
         }
     };
