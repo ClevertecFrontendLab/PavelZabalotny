@@ -2,7 +2,7 @@ import { Box, Container, Flex, HStack, useMediaQuery } from '@chakra-ui/react';
 import { Outlet } from 'react-router';
 
 import Navigation from '~/components/layout/aside/navigation';
-import RightAside from '~/components/layout/aside/RightAside';
+import Sidebar from '~/components/layout/aside/Sidebar';
 import Footer from '~/components/layout/footer/Footer';
 import FooterLeft from '~/components/layout/footer/FooterLeft';
 import Header from '~/components/layout/Header';
@@ -16,7 +16,7 @@ const LayoutWrapper = () => {
     return (
         <Flex direction='column' minH='100vh'>
             <Header />
-            <Flex as='main' flex='1'>
+            <Flex as='main' flex='1' mt='84px'>
                 <Container
                     maxW='container.xl'
                     px={{ base: 4, md: 5, lg: '10px' }}
@@ -24,13 +24,7 @@ const LayoutWrapper = () => {
                 >
                     <HStack gap={6} align='stretch'>
                         {isLargerThan1440 && (
-                            <Box
-                                as='aside'
-                                w='256px'
-                                h={maxHeight}
-                                flexShrink={0}
-                                position='relative'
-                            >
+                            <Box as='aside' w='256px' h={maxHeight} flexShrink={0} position='fixed'>
                                 <Navigation />
                                 <Box
                                     as='footer'
@@ -46,7 +40,7 @@ const LayoutWrapper = () => {
                             maxW={{ base: '100%', lg: '880px' }}
                             h={maxHeight}
                             pt={8}
-                            overflowY='scroll'
+                            ml={{ base: 0, lg: '280px' }}
                             css={{
                                 '&::-webkit-scrollbar': {
                                     display: 'none',
@@ -55,7 +49,7 @@ const LayoutWrapper = () => {
                         >
                             <Outlet />
                         </Box>
-                        {isLargerThan1440 && <RightAside />}
+                        {isLargerThan1440 && <Sidebar />}
                     </HStack>
                 </Container>
             </Flex>
