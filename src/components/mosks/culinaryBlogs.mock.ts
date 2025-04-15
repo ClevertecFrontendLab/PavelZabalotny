@@ -1,4 +1,4 @@
-import { CulinaryBlogCardProps } from '~/components/culinaryBlogs/CulinaryBlogCard';
+import type { CulinaryBlogCardProps } from '../CulinaryBlogs/CulinaryBlogCard';
 
 const culinaryBlogsMock: CulinaryBlogCardProps[] = [
     {

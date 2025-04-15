@@ -1,4 +1,4 @@
-import { VeganRecipeCardProps } from '~/components/veganRecipes/vegan-recipes.interface';
+import type { VeganRecipeCardProps } from '../VeganRecipes/veganRecipes.interface';
 
 const veganRecipes: VeganRecipeCardProps['veganRecipe'][] = [
     {

@@ -1,4 +1,4 @@
-import { RecipeProps } from '~/components/newRecipes/NewRecipeCard';
+import type { RecipeProps } from '../NewRecipes/NewRecipeCard';
 
 const newRecipes: RecipeProps[] = [
     {

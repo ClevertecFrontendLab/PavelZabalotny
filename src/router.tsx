@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router';
 
-import Home from '~/components/layout/Home';
 import LayoutWrapper from '~/components/layout/LayoutWrapper';
-import TabsComponent from '~/components/tabs/TabsComponent';
+import CustomTabs from '~/components/shared/CustomTabs';
+import HomePage from '~/pages/HomePage';
 import MostDeliciousPage from '~/pages/MostDeliciousPage';
 import VeganCuisinePage from '~/pages/VeganCuisinePage';
 
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: Home,
+                Component: HomePage,
             },
             {
                 path: 'vegan-cuisine',
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: ':subCategoryId',
-                        Component: TabsComponent,
+                        Component: CustomTabs,
                     },
                 ],
             },

@@ -1,6 +1,6 @@
-import MostDelicious from '~/components/mostDelicious/MostDelicious';
-import Search from '~/components/search/Search';
-import VeganRecipes from '~/components/veganRecipes/VeganRecipes';
+import MostDelicious from '~/components/MostDelicious/MostDelicious';
+import Search from '~/components/shared/Search';
+import VeganRecipes from '~/components/VeganRecipes/VeganRecipes';
 
 const MostDeliciousPage = () => (
     <>

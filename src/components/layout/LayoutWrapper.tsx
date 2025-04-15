@@ -1,17 +1,17 @@
-import { Box, Container, Flex, HStack, useMediaQuery } from '@chakra-ui/react';
+import { Box, Container, Flex, HStack } from '@chakra-ui/react';
 import { Outlet } from 'react-router';
 
-import Navigation from '~/components/layout/aside/navigation';
-import Sidebar from '~/components/layout/aside/Sidebar';
-import Footer from '~/components/layout/footer/Footer';
-import FooterLeft from '~/components/layout/footer/FooterLeft';
+import Navigation from '~/components/layout/aside/Navigation';
+import Sidebar from '~/components/layout/aside/Sidebar/Sidebar';
+import Footer from '~/components/layout/Footer/Footer';
+import FooterLeft from '~/components/layout/Footer/FooterLeft';
 import Header from '~/components/layout/Header';
+import { useBreakpoints } from '~/hooks/useBreakpoints';
 
 const maxHeight = 'calc(100vh - 80px)';
 
 const LayoutWrapper = () => {
-    const [isLargerThan768] = useMediaQuery('(min-width: 769px)');
-    const [isLargerThan1440] = useMediaQuery('(min-width: 1440px)');
+    const { isAbove768, isMin1440 } = useBreakpoints();
 
     return (
         <Flex direction='column'>
@@ -23,7 +23,7 @@ const LayoutWrapper = () => {
                     pb={{ base: '110px', md: '100px', lg: 0 }}
                 >
                     <HStack gap={6} align='stretch'>
-                        {isLargerThan1440 && (
+                        {isMin1440 && (
                             <Box as='aside' w='256px' h={maxHeight} flexShrink={0} position='fixed'>
                                 <Navigation />
                                 <Box
@@ -49,11 +49,11 @@ const LayoutWrapper = () => {
                         >
                             <Outlet />
                         </Box>
-                        {isLargerThan1440 && <Sidebar />}
+                        {isMin1440 && <Sidebar />}
                     </HStack>
                 </Container>
             </Flex>
-            {!isLargerThan768 && <Footer />}
+            {!isAbove768 && <Footer />}
         </Flex>
     );
 };

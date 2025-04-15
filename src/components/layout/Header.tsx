@@ -11,18 +11,19 @@ import {
     Link,
     Show,
     Text,
-    useMediaQuery,
     VStack,
     Wrap,
     WrapItem,
 } from '@chakra-ui/react';
 
-import Breadcrumbs from '~/components/Breadcrumbs';
-import { BurgerMenuIcon, LogoIcon } from '~/components/layout/icons';
-import ProfileNotification from '~/components/ProfileNotification';
+import Breadcrumbs from '~/components/shared/Breadcrumbs';
+import ProfileNotification from '~/components/shared/ProfileNotification';
+import { useBreakpoints } from '~/hooks/useBreakpoints';
+
+import { BurgerMenuIcon, LogoIcon } from '../shared/icons';
 
 const Header = () => {
-    const [is768AndLarge] = useMediaQuery('(min-width: 768px)');
+    const { isMin768 } = useBreakpoints();
 
     return (
         <Box
@@ -44,7 +45,7 @@ const Header = () => {
                 >
                     <Link href='/' display='inline-flex' gap={2}>
                         <LogoIcon boxSize={8} color='brand.green.logo' aria-label='yee-daa-logo' />
-                        {is768AndLarge && (
+                        {isMin768 && (
                             <Image src='/src/assets/icons/yee-daa.svg' aria-label='yee-daa-logo' />
                         )}
                     </Link>
