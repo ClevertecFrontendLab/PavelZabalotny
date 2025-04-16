@@ -8,6 +8,7 @@ interface SliderButtonProps {
     bottom?: number;
     left?: number;
     right?: number;
+    className?: string;
 }
 
 const SliderButton: FC<SliderButtonProps> = ({
@@ -17,6 +18,7 @@ const SliderButton: FC<SliderButtonProps> = ({
     bottom = 216,
     left,
     right,
+    className,
 }) => (
     <Button
         leftIcon={icon}
@@ -29,6 +31,7 @@ const SliderButton: FC<SliderButtonProps> = ({
         left={left}
         right={right}
         zIndex={9}
+        className={className}
     ></Button>
 );
 
