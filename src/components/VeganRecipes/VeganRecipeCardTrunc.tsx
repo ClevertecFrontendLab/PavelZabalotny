@@ -1,14 +1,15 @@
 import { Box, Button, Card, Image, Text } from '@chakra-ui/react';
+import { FC } from 'react';
 
-import type { VeganRecipeCardProps } from './veganRecipes.interface';
+import { categoryInfo } from '~/components/mosks/navigation.mock';
+import { VeganRecipeCardProps } from '~/components/mosks/veganRecipes.mock';
 
-const VeganRecipeCardTrunc = ({
-    veganRecipe: {
-        title,
-        category: { icon },
-    },
-}: {
-    veganRecipe: VeganRecipeCardProps['veganRecipe'];
+type VeganRecipeCardTruncProps = {
+    veganRecipe: VeganRecipeCardProps;
+};
+
+const VeganRecipeCardTrunc: FC<VeganRecipeCardTruncProps> = ({
+    veganRecipe: { title, category },
 }) => (
     <Card
         border='1px solid rgba(0, 0, 0, 0.08)'
@@ -21,7 +22,11 @@ const VeganRecipeCardTrunc = ({
         }}
     >
         <Box display='flex' alignItems='center' gap={2}>
-            <Image src={icon} boxSize={6} />
+            {category.slice(0, 1).map((item) => {
+                const { title, icon } = categoryInfo[item];
+
+                return <Image src={icon} boxSize={6} key={title} />;
+            })}
             <Text isTruncated fontSize={{ base: '1rem', lg: '1.125rem', xl: '1.25rem' }}>
                 {title}
             </Text>

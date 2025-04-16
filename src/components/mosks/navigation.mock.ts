@@ -1,19 +1,155 @@
+export type SubcategoryId =
+    | 'meat-salads'
+    | 'fish-salads'
+    | 'vegetable-salads'
+    | 'warm-salads'
+    | 'meat-snacks'
+    | 'fish-snacks'
+    | 'side-dishes'
+    | 'warm-snacks'
+    | 'sandwiches'
+    | 'fastfood'
+    | 'meat-soups'
+    | 'vegetable-soups'
+    | 'broths'
+    | 'cold-soups'
+    | 'diet-soups'
+    | 'meat'
+    | 'fish'
+    | 'vegetable'
+    | 'poultry-dish'
+    | 'mushrooms'
+    | 'offal'
+    | 'steamed'
+    | 'dumplings'
+    | 'flour-side'
+    | 'vegetable-side'
+    | 'pizza'
+    | 'sushi'
+    | 'pancakes'
+    | 'pies'
+    | 'cakes'
+    | 'rolls'
+    | 'muffins'
+    | 'cheesecakes'
+    | 'puff-pastry'
+    | 'choux-pastry'
+    | 'yeast-dough'
+    | 'buns'
+    | 'bread'
+    | 'pizza-dough'
+    | 'creams'
+    | 'grill-beef'
+    | 'grill-pork'
+    | 'grill-poultry'
+    | 'grill-fish'
+    | 'grill-mushrooms'
+    | 'grill-vegetables'
+    | 'vegan-snacks'
+    | 'vegan-first'
+    | 'vegan-second'
+    | 'vegan-side'
+    | 'vegan-desserts'
+    | 'vegan-bakery'
+    | 'vegetables'
+    | 'vegan-drinks'
+    | 'kids-first'
+    | 'kids-second'
+    | 'kids-side'
+    | 'kids-bakery'
+    | 'kids-gluten-free'
+    | 'kids-sugar-free'
+    | 'kids-allergen-free'
+    | 'kids-baby-food'
+    | 'kids-diet'
+    | 'diet-1'
+    | 'diet-2'
+    | 'diet-3'
+    | 'diet-5'
+    | 'diet-6'
+    | 'diet-7'
+    | 'diet-8'
+    | 'diet-9'
+    | 'diet-10'
+    | 'diet-11'
+    | 'diet-12'
+    | 'diet-13'
+    | 'diet-14'
+    | 'gluten-free'
+    | 'allergen-free'
+    | 'american'
+    | 'armenian'
+    | 'greek'
+    | 'georgian'
+    | 'italian'
+    | 'spanish'
+    | 'chinese'
+    | 'mexican'
+    | 'panasian'
+    | 'russian'
+    | 'turkish'
+    | 'french'
+    | 'swedish'
+    | 'japanese'
+    | 'other-cuisine'
+    | 'meat-sauces'
+    | 'cheese-sauces'
+    | 'marinades'
+    | 'preserves'
+    | 'meat-preserves'
+    | 'fish-preserves'
+    | 'cucumber-preserves'
+    | 'tomato-preserves'
+    | 'mushroom-preserves'
+    | 'vegetable-preserves'
+    | 'salads-preserves'
+    | 'fruit-preserves'
+    | 'juices'
+    | 'smoothies'
+    | 'compotes'
+    | 'kissels'
+    | 'coffee'
+    | 'tea'
+    | 'kvass'
+    | 'cocktails'
+    | 'alcohol';
+
 export interface SubCategory {
-    id: string;
+    id: SubcategoryId;
     name: string;
 }
 
+export const categoryInfo = {
+    salads: { icon: '/src/assets/icons/nav/salad.svg', title: 'Салаты' },
+    snacks: { icon: '/src/assets/icons/nav/snack.svg', title: 'Закуски' },
+    'first-courses': { icon: '/src/assets/icons/nav/soup.svg', title: 'Первые блюда' },
+    'second-dish': { icon: '/src/assets/icons/nav/main-course.svg', title: 'Вторые блюда' },
+    desserts: { icon: '/src/assets/icons/nav/dessert.svg', title: 'Десерты, выпечка' },
+    grill: { icon: '/src/assets/icons/nav/grill.svg', title: 'Блюда на гриле' },
+    vegan: { icon: '/src/assets/icons/nav/vegan.svg', title: 'Веганская кухня' },
+    kids: { icon: '/src/assets/icons/nav/kids.svg', title: 'Детские блюда' },
+    medical: { icon: '/src/assets/icons/nav/medical.svg', title: 'Лечебное питание' },
+    national: { icon: '/src/assets/icons/nav/national.svg', title: 'Национальные' },
+    sauces: { icon: '/src/assets/icons/nav/sauce.svg', title: 'Соусы' },
+    drinks: { icon: '/src/assets/icons/nav/drink.svg', title: 'Напитки' },
+    preserves: { icon: '/src/assets/icons/nav/preserves.svg', title: 'Заготовки' },
+} as const;
+
+export type CategoryId = keyof typeof categoryInfo;
+export type CategoryTitle = (typeof categoryInfo)[keyof typeof categoryInfo]['title'];
+export type CategoryIcon = (typeof categoryInfo)[keyof typeof categoryInfo]['icon'];
+
 export interface Category {
-    id: string;
-    name: string;
-    icon: string;
+    id: CategoryId;
+    title: CategoryTitle;
+    icon: CategoryIcon;
     subCategories: SubCategory[];
 }
 
 export const navigation: Category[] = [
     {
         id: 'salads',
-        name: 'Салаты',
+        title: 'Салаты',
         icon: '/src/assets/icons/nav/salad.svg',
         subCategories: [
             { id: 'meat-salads', name: 'Мясные салаты' },
@@ -24,12 +160,12 @@ export const navigation: Category[] = [
     },
     {
         id: 'snacks',
-        name: 'Закуски',
+        title: 'Закуски',
         icon: '/src/assets/icons/nav/snack.svg',
         subCategories: [
             { id: 'meat-snacks', name: 'Мясные закуски' },
             { id: 'fish-snacks', name: 'Рыбные закуски' },
-            { id: 'vegetable-snacks', name: 'Овощные закуски' },
+            { id: 'side-dishes', name: 'Овощные закуски' },
             { id: 'warm-snacks', name: 'Теплые закуски' },
             { id: 'sandwiches', name: 'Бутерброды' },
             { id: 'fastfood', name: 'Фастфуд' },
@@ -37,7 +173,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'first-courses',
-        name: 'Первые блюда',
+        title: 'Первые блюда',
         icon: '/src/assets/icons/nav/soup.svg',
         subCategories: [
             { id: 'meat-soups', name: 'Мясные супы' },
@@ -48,14 +184,14 @@ export const navigation: Category[] = [
         ],
     },
     {
-        id: 'second-courses',
-        name: 'Вторые блюда',
+        id: 'second-dish',
+        title: 'Вторые блюда',
         icon: '/src/assets/icons/nav/main-course.svg',
         subCategories: [
             { id: 'meat', name: 'Мясные' },
             { id: 'fish', name: 'Рыбные' },
             { id: 'vegetable', name: 'Овощные' },
-            { id: 'poultry', name: 'Из птицы' },
+            { id: 'poultry-dish', name: 'Из птицы' },
             { id: 'mushrooms', name: 'Из грибов' },
             { id: 'offal', name: 'Из субпродуктов' },
             { id: 'steamed', name: 'На пару' },
@@ -68,7 +204,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'desserts',
-        name: 'Десерты, выпечка',
+        title: 'Десерты, выпечка',
         icon: '/src/assets/icons/nav/dessert.svg',
         subCategories: [
             { id: 'pancakes', name: 'Блины и оладьи' },
@@ -88,7 +224,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'grill',
-        name: 'Блюда на гриле',
+        title: 'Блюда на гриле',
         icon: '/src/assets/icons/nav/grill.svg',
         subCategories: [
             { id: 'grill-beef', name: 'Говядина' },
@@ -101,7 +237,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'vegan',
-        name: 'Веганская кухня',
+        title: 'Веганская кухня',
         icon: '/src/assets/icons/nav/vegan.svg',
         subCategories: [
             { id: 'vegan-snacks', name: 'Закуски' },
@@ -110,13 +246,13 @@ export const navigation: Category[] = [
             { id: 'vegan-side', name: 'Гарниры' },
             { id: 'vegan-desserts', name: 'Десерты' },
             { id: 'vegan-bakery', name: 'Выпечка' },
-            { id: 'vegan-raw', name: 'Сыроедческие блюда' },
+            { id: 'vegetables', name: 'Сыроедческие блюда' },
             { id: 'vegan-drinks', name: 'Напитки' },
         ],
     },
     {
         id: 'kids',
-        name: 'Детские блюда',
+        title: 'Детские блюда',
         icon: '/src/assets/icons/nav/kids.svg',
         subCategories: [
             { id: 'kids-first', name: 'Первые блюда' },
@@ -131,7 +267,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'medical',
-        name: 'Лечебное питание',
+        title: 'Лечебное питание',
         icon: '/src/assets/icons/nav/medical.svg',
         subCategories: [
             { id: 'kids-diet', name: 'Детская диета' },
@@ -154,7 +290,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'national',
-        name: 'Национальные',
+        title: 'Национальные',
         icon: '/src/assets/icons/nav/national.svg',
         subCategories: [
             { id: 'american', name: 'Американская кухня' },
@@ -176,7 +312,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'sauces',
-        name: 'Соусы',
+        title: 'Соусы',
         icon: '/src/assets/icons/nav/sauce.svg',
         subCategories: [
             { id: 'meat-sauces', name: 'Соусы мясные' },
@@ -195,7 +331,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'drinks',
-        name: 'Напитки',
+        title: 'Напитки',
         icon: '/src/assets/icons/nav/drink.svg',
         subCategories: [
             { id: 'juices', name: 'Соки и фреши' },
@@ -211,7 +347,7 @@ export const navigation: Category[] = [
     },
     {
         id: 'preserves',
-        name: 'Заготовки',
+        title: 'Заготовки',
         icon: '/src/assets/icons/nav/preserves.svg',
         subCategories: [
             { id: 'meat-preserves', name: 'Мясные заготовки' },

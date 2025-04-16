@@ -1,13 +1,13 @@
 import { Box, Heading, Hide, Stack, Text, VStack } from '@chakra-ui/react';
 
-import mockVeganRecipe from '~/components/mosks/veganRecipes.mock';
+import { veganRecipes } from '~/components/mosks/veganRecipes.mock';
 
 import VeganRecipeCardFull from './VeganRecipeCardFull';
 import VeganRecipeCardTrunc from './VeganRecipeCardTrunc';
 
 const VeganRecipes = () => {
-    const mockVeganRecipeFull = mockVeganRecipe.slice(0, 2);
-    const mockVeganRecipeTrunc = mockVeganRecipe.slice(2);
+    const mockVeganRecipeFull = veganRecipes.slice(0, 2);
+    const mockVeganRecipeTrunc = veganRecipes.slice(2, 5);
 
     return (
         <Box as='section' mt={8} pt={{ base: 2, lg: 6 }} borderTop='1px solid rgba(0, 0, 0, 0.08)'>

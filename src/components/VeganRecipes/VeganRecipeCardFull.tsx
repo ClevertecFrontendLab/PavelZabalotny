@@ -1,14 +1,15 @@
 import { Box, ButtonGroup, Card, Image, Text } from '@chakra-ui/react';
 
+import { categoryInfo } from '~/components/mosks/navigation.mock';
+import { VeganRecipeCardProps } from '~/components/mosks/veganRecipes.mock';
 import CustomProfileButton from '~/components/shared/CustomProfileButton';
 
 import { BookmarksIcon, LikeIcon } from '../shared/icons';
-import type { VeganRecipeCardProps } from './veganRecipes.interface';
 
 const VeganRecipeCardFull = ({
-    veganRecipe: { title, description, category, icons },
+    veganRecipe: { title, description, category, bookmarks, likes },
 }: {
-    veganRecipe: VeganRecipeCardProps['veganRecipe'];
+    veganRecipe: VeganRecipeCardProps;
 }) => (
     <Card
         border='1px solid rgba(0, 0, 0, 0.08)'
@@ -29,31 +30,46 @@ const VeganRecipeCardFull = ({
                     {description}
                 </Text>
             </Box>
-            <Box display='flex' justifyContent='space-between'>
-                <Box
-                    display='flex'
-                    alignItems='center'
-                    bg='brand.yellow'
-                    borderRadius={4}
-                    padding='2px 8px'
-                    top={2}
-                    left={2}
-                    flexShrink={0}
-                >
-                    <Image src={category.icon} boxSize={4} />
-                    <Box as='span' fontSize='0.875rem'>
-                        {category.text}
-                    </Box>
-                </Box>
-                <ButtonGroup gap={2} p={1}>
-                    {icons.map(({ leftIcon, text }, i) => (
-                        <CustomProfileButton
-                            leftIcon={leftIcon === 'bookmarks' ? <BookmarksIcon /> : <LikeIcon />}
-                            text={text}
-                            key={i}
-                            textColor='brand.green.profile'
-                        />
-                    ))}
+            <Box display='flex' justifyContent='space-between' gap={0}>
+                {category.slice(0, 1).map((item) => {
+                    const { title, icon } = categoryInfo[item];
+
+                    return (
+                        <Box
+                            display='flex'
+                            alignItems='center'
+                            bg='brand.yellow'
+                            borderRadius={4}
+                            padding='2px 8px'
+                            top={2}
+                            left={2}
+                            flexShrink={0}
+                            key={title}
+                        >
+                            <Image src={icon} boxSize={4} />
+                            <Text
+                                noOfLines={1}
+                                as='span'
+                                fontSize='0.875rem'
+                                maxW={{ base: '100%', md: '90px', lg: '100%' }}
+                            >
+                                {title}
+                            </Text>
+                        </Box>
+                    );
+                })}
+
+                <ButtonGroup gap={0} p={1}>
+                    <CustomProfileButton
+                        leftIcon={<BookmarksIcon />}
+                        text={bookmarks}
+                        textColor='brand.green.profile'
+                    />
+                    <CustomProfileButton
+                        leftIcon={<LikeIcon />}
+                        text={likes}
+                        textColor='brand.green.profile'
+                    />
                 </ButtonGroup>
             </Box>
         </Box>

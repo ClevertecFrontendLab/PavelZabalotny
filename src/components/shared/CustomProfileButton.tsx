@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 
 interface CustomButtonProps {
     leftIcon: ReactElement;
-    text: string;
+    text: string | number;
     flexDirection?: 'row' | 'column';
     height?: string;
     width?: string;

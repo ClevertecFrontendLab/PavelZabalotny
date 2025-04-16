@@ -65,7 +65,7 @@ const Navigation = () => {
                         >
                             <Flex align='center' flex='1' textAlign='left' gap={3}>
                                 <Image src={category.icon} boxSize={6} />
-                                <Text fontSize='md'>{category.name}</Text>
+                                <Text fontSize='md'>{category.title}</Text>
                             </Flex>
                             <AccordionIcon />
                         </AccordionButton>
