@@ -1,13 +1,13 @@
 import CulinaryBlogs from '~/components/CulinaryBlogs/CulinaryBlogs';
 import MostDelicious from '~/components/MostDelicious/MostDelicious';
-import NewRecipes from '~/components/NewRecipes/NewRecipes';
 import Search from '~/components/shared/Search';
+import Slider from '~/components/Slider/Slider';
 import VeganRecipes from '~/components/VeganRecipes/VeganRecipes';
 
 const HomePage = () => (
     <>
         <Search title='Приятного аппетита!' />
-        <NewRecipes />
+        <Slider />
         <MostDelicious maxItems={4} />
         <CulinaryBlogs />
         <VeganRecipes />

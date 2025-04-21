@@ -3,7 +3,7 @@ import { Box, Button, Heading, HStack, Stack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavLink } from 'react-router';
 
-import mostDelicious from '~/components/mosks/mostDelicious.mock';
+import { veganRecipes } from '~/components/mosks/veganRecipes.mock';
 import { useBreakpoints } from '~/hooks/useBreakpoints';
 
 import MostDeliciousCard from './MostDeliciousCard';
@@ -51,7 +51,7 @@ const MostDelicious: FC<MostDeliciousProps> = ({ maxItems }) => {
                 flexWrap={{ base: 'nowrap', md: 'wrap' }}
                 align='center'
             >
-                {mostDelicious.slice(0, maxItems).map((recipe) => (
+                {veganRecipes.slice(0, maxItems).map((recipe) => (
                     <MostDeliciousCard key={recipe.id} recipe={recipe} />
                 ))}
             </Stack>

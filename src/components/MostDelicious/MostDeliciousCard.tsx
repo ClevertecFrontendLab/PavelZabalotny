@@ -10,16 +10,20 @@ import {
     Image,
     Text,
 } from '@chakra-ui/react';
+import { FC } from 'react';
 
-import { MostDeliciousProps } from '~/components/mosks/mostDelicious.mock';
+import { categoryInfo } from '~/components/mosks/navigation.mock';
+import { VeganRecipeCardProps } from '~/components/mosks/veganRecipes.mock';
 import CustomProfileButton from '~/components/shared/CustomProfileButton';
 
 import { BookmarksIcon, LikeIcon } from '../shared/icons';
 
-const MostDeliciousCard = ({
-    recipe: { category, icons, title, description, image, recommendedBy },
-}: {
-    recipe: MostDeliciousProps;
+type MostDeliciousCardProps = {
+    recipe: VeganRecipeCardProps;
+};
+
+const MostDeliciousCard: FC<MostDeliciousCardProps> = ({
+    recipe: { title, description, image, category, recommendedBy, bookmarks, likes },
 }) => (
     <Card
         display='flex'
@@ -32,7 +36,7 @@ const MostDeliciousCard = ({
         }}
     >
         <CardHeader p={0} flexShrink={0}>
-            <Box
+            {/*<Box
                 position='absolute'
                 display={{ base: 'flex', lg: 'none' }}
                 alignItems='center'
@@ -46,7 +50,7 @@ const MostDeliciousCard = ({
                 <Box as='span' fontSize='0.875rem'>
                     {category.text}
                 </Box>
-            </Box>
+            </Box>*/}
             {recommendedBy && (
                 <Box
                     position='absolute'
@@ -84,35 +88,42 @@ const MostDeliciousCard = ({
         >
             <Box>
                 <HStack justifyContent='space-between'>
-                    <Box
-                        display={{ base: 'none', lg: 'flex' }}
-                        alignItems='center'
-                        bg='brand.yellow'
-                        borderRadius={4}
-                        padding='2px 4px'
-                        gap={2}
-                    >
-                        <Image src={category.icon} boxSize={4} />
-                        <Box as='span' fontSize='0.875rem'>
-                            {category.text}
-                        </Box>
-                    </Box>
+                    {category.slice(0, 1).map((item) => {
+                        const { title, icon } = categoryInfo[item];
+
+                        return (
+                            <Box
+                                display={{ base: 'none', lg: 'flex' }}
+                                alignItems='center'
+                                bg='brand.yellow'
+                                borderRadius={4}
+                                padding='2px 4px'
+                                gap={2}
+                                key={title}
+                            >
+                                <Image src={icon} boxSize={4} />
+                                <Text noOfLines={1} as='span' fontSize='0.875rem'>
+                                    {title}
+                                </Text>
+                            </Box>
+                        );
+                    })}
                     <ButtonGroup gap={2} p={1}>
-                        {icons.map(({ leftIcon, text }, i) => (
-                            <CustomProfileButton
-                                leftIcon={
-                                    leftIcon === 'bookmarks' ? <BookmarksIcon /> : <LikeIcon />
-                                }
-                                text={text}
-                                key={i}
-                                textColor='brand.green.profile'
-                            />
-                        ))}
+                        <CustomProfileButton
+                            leftIcon={<BookmarksIcon />}
+                            text={bookmarks}
+                            textColor='brand.green.profile'
+                        />
+                        <CustomProfileButton
+                            leftIcon={<LikeIcon />}
+                            text={likes}
+                            textColor='brand.green.profile'
+                        />
                     </ButtonGroup>
                 </HStack>
 
                 <Text
-                    noOfLines={{ base: 0, xl: 1 }}
+                    noOfLines={{ base: 2, xl: 1 }}
                     as='h3'
                     fontSize={{ base: '1rem', lg: '1.25rem' }}
                     lineHeight={{ base: 1.5, lg: 1.4 }}
