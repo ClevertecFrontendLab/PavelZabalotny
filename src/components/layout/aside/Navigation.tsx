@@ -11,32 +11,46 @@ import {
     Stack,
     Text,
 } from '@chakra-ui/react';
+import { FC } from 'react';
 import { NavLink, useNavigate } from 'react-router';
 
 import { Category, navigation } from '~/components/mosks/navigation.mock';
 
-const Navigation = () => {
+type NavigationProps = {
+    closeBurgerMenu?: () => void;
+};
+
+const Navigation: FC<NavigationProps> = ({ closeBurgerMenu }) => {
     const navigate = useNavigate();
 
     const handleCategoryClick = (category: Category) => {
         if (category.subCategories?.length > 0) {
-            navigate('vegan-cuisine');
+            navigate(`${category.id}/${category.subCategories[0].id}`);
         }
+    };
+
+    const handleLinkClick = () => {
+        closeBurgerMenu?.();
     };
 
     return (
         <Box
-            mt={6}
-            pt={4}
+            mt={{ base: 0, lg: 6 }}
+            pt={{ base: 0, lg: 4 }}
             pr={4}
-            height='calc(100vh - 250px - 25px)'
+            maxH={{ base: '440px', md: '636px', lg: 'calc(100vh - 250px - 25px)' }}
             overflowY='auto'
             fontSize='1rem'
             fontWeight={500}
             lineHeight={1.5}
-            _hover={{
-                boxShadow: '0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                borderRadius: '12px',
+            sx={{
+                '@media (min-width: 769px)': {
+                    _hover: {
+                        boxShadow:
+                            '0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                        borderRadius: '12px',
+                    },
+                },
             }}
             css={{
                 '&::-webkit-scrollbar': {
@@ -76,7 +90,7 @@ const Navigation = () => {
                                     <Link
                                         as={NavLink}
                                         key={subCategory.id}
-                                        to='/vegan-cuisine'
+                                        to={`${category.id}/${subCategory.id}`}
                                         p='6px 0px 6px 44px'
                                         display='inline-flex'
                                         verticalAlign='middle'
@@ -88,6 +102,7 @@ const Navigation = () => {
                                                 textDecoration: 'none',
                                             },
                                         }}
+                                        onClick={() => handleLinkClick()}
                                     >
                                         <Box
                                             as='span'

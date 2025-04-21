@@ -17,10 +17,11 @@ import {
 } from '@chakra-ui/react';
 
 import Breadcrumbs from '~/components/shared/Breadcrumbs';
+import BurgerMenu from '~/components/shared/BurgerMenu';
 import ProfileNotification from '~/components/shared/ProfileNotification';
 import { useBreakpoints } from '~/hooks/useBreakpoints';
 
-import { BurgerMenuIcon, LogoIcon } from '../shared/icons';
+import { LogoIcon } from '../shared/icons';
 
 const Header = () => {
     const { isMin768 } = useBreakpoints();
@@ -41,7 +42,7 @@ const Header = () => {
                     justify='space-between'
                     align='center'
                     justifyContent='flex-start'
-                    gap={{ xl: '144px' }}
+                    gap={{ lg: '140px', xl: '144px' }}
                 >
                     <Link href='/' display='inline-flex' gap={2}>
                         <LogoIcon boxSize={8} color='brand.green.logo' aria-label='yee-daa-logo' />
@@ -53,17 +54,13 @@ const Header = () => {
                     <Flex
                         align='center'
                         w='100%'
-                        justifyContent={{ base: 'flex-end', xl: 'space-between' }}
+                        justifyContent={{ base: 'flex-end', lg: 'space-between' }}
                     >
-                        <Breadcrumbs />
+                        <Breadcrumbs display={{ base: 'none', lg: 'flex' }} />
                         <Hide above='lg'>
                             <ProfileNotification />
                             <Center>
-                                <BurgerMenuIcon
-                                    boxSize={6}
-                                    color='#000'
-                                    aria-label='hamburger-menu'
-                                />
+                                <BurgerMenu />
                             </Center>
                         </Hide>
                         <Show above='lg'>

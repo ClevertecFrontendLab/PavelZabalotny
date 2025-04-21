@@ -1,42 +1,68 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, ResponsiveValue } from '@chakra-ui/react';
+import { Property } from 'csstype';
+import { FC } from 'react';
 import { NavLink, useLocation } from 'react-router';
 
-const customLabels: Record<string, string> = {
-    'vegan-cuisine': 'Веганская кухня',
-    'most-delicious': 'Самое сочное',
+import {
+    CategoryId,
+    CategoryTitle,
+    navigation,
+    SubCategory,
+} from '~/components/mosks/navigation.mock';
+
+type BreadcrumbProps = {
+    display?: ResponsiveValue<Property.Display>;
+    closeBurgerMenu?: () => void;
 };
 
-export const Breadcrumbs = () => {
+export const Breadcrumbs: FC<BreadcrumbProps> = ({ display, closeBurgerMenu }) => {
     const location = useLocation();
-    const pathname = location.pathname;
+    const pathName = location.pathname;
 
-    const pathnames = pathname.split('/').filter(Boolean);
+    const pathNames = pathName.split('/').filter(Boolean);
+    let categoryId: CategoryId;
 
     return (
-        <Breadcrumb separator='>' fontSize='sm' padding={4} display={{ base: 'none', xl: 'flex' }}>
+        <Breadcrumb
+            separator='>'
+            fontSize='sm'
+            padding={4}
+            display={display}
+            sx={{ '& ol': { flexWrap: 'wrap' } }}
+        >
             <BreadcrumbItem key='home'>
-                <BreadcrumbLink as={NavLink} to='/'>
+                <BreadcrumbLink as={NavLink} to='/' onClick={closeBurgerMenu}>
                     Главная
                 </BreadcrumbLink>
             </BreadcrumbItem>
 
-            {pathnames.map((segment, index) => {
-                const routeTo = '/' + pathnames.slice(0, index + 1).join('/');
-                const isLast = index === pathnames.length - 1;
+            {pathNames.map((segment, index, array) => {
+                const routeTo = '/' + pathNames.slice(0, index + 1).join('/');
+                const isLast = index === pathNames.length - 1;
 
-                const label =
-                    customLabels[segment] ||
-                    segment
-                        .split('-')
-                        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                        .join(' ');
+                const categoryTitle: CategoryTitle | undefined = navigation.find(({ id }) => {
+                    categoryId = id;
+
+                    return id === segment || id === array[index - 1];
+                })?.title;
+
+                const subCategoryName: string | null | undefined =
+                    index > 0
+                        ? navigation
+                              .find(({ id }) => id === categoryId)
+                              ?.subCategories.find(({ id }) => id === segment)?.name
+                        : null;
+
+                const label: CategoryTitle | SubCategory['name'] | undefined = subCategoryName
+                    ? subCategoryName
+                    : categoryTitle;
 
                 return (
                     <BreadcrumbItem key={routeTo} isCurrentPage={isLast}>
                         {isLast ? (
                             <BreadcrumbLink aria-current='page'>{label}</BreadcrumbLink>
                         ) : (
-                            <BreadcrumbLink as={NavLink} to={routeTo}>
+                            <BreadcrumbLink as={NavLink} to={routeTo} onClick={closeBurgerMenu}>
                                 {label}
                             </BreadcrumbLink>
                         )}

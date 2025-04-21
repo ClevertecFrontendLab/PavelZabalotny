@@ -16,7 +16,7 @@ const router = createBrowserRouter([
                 Component: HomePage,
             },
             {
-                path: 'vegan-cuisine',
+                path: ':categoryId',
                 Component: VeganCuisinePage,
                 children: [
                     {
