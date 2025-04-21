@@ -36,6 +36,10 @@ export interface VeganRecipeCardProps {
     steps: Step[];
     meat?: string;
     side?: string;
+    recommendedBy?: {
+        avatar: string;
+        userName: string;
+    };
 }
 
 export const veganRecipes: VeganRecipeCardProps[] = [
@@ -46,7 +50,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             'Картошка, тушенная с болгарским перцем, фасолью, морковью и луком, - вариант сытного блюда на каждый день. Фасоль в данном случае заменяет мясо, делая рагу сытным и питательным. Чтобы сократить время приготовления, возьмём консервированную фасоль. Блюдо хоть и простое, но в полной мере наполнено ароматами и имеет выразительный вкус за счёт добавления томатной пасты.',
         category: ['second-dish', 'vegan'],
         subcategory: ['snacks', 'vegetables'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/solyanka.jpg',
         bookmarks: 85,
         likes: 152,
         date: '2025-02-28T00:00:00Z',
@@ -93,7 +97,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             'Рекомендую всем приготовить постное блюдо из картофеля и грибов. Готовится это блюдо без яиц, без мяса и без сыра, из самых простых ингредиентов, а получается очень вкусно и сытно. Постный рецепт картофельных рулетиков с грибами, в томатном соусе, - на обед, ужин и даже на праздничный стол!',
         category: ['snacks', 'vegan'],
         subcategory: ['snacks', 'warm-snacks'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/cutlets.jpg',
         bookmarks: 85,
         likes: 115,
         date: '2024-02-20T00:00:00Z',
@@ -124,6 +128,10 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             },
         ],
         side: 'potatoes',
+        recommendedBy: {
+            avatar: '/src/assets/images/elenapovar.png',
+            userName: 'Елена Высоцкая',
+        },
     },
     {
         id: '2',
@@ -132,7 +140,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             'Большое, сытное блюдо для ценителей блюд без мяса! Такая лазанья готовится с овощным соусом и соусом бешамель, а вместо листов для лазаньи используется тонкий лаваш.',
         category: ['vegan', 'second-dish', 'national'],
         subcategory: ['second-dish', 'vegetables', 'italian', 'snacks'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/pancakes.jpg',
         bookmarks: 85,
         likes: 152,
         date: '2023-01-25T00:00:00Z',
@@ -162,6 +170,10 @@ export const veganRecipes: VeganRecipeCardProps[] = [
                 image: 'url',
             },
         ],
+        recommendedBy: {
+            avatar: '/src/assets/images/funtasticooking.png',
+            userName: 'Alex Cook',
+        },
     },
     {
         id: '3',
@@ -170,7 +182,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             'Тефтели из булгура и чечевицы – яркие и питательные, отлично подходят для постного и вегетарианского меню. Тефтели получаются нежными, а также сочными и ароматными благодаря использованию томатного соуса и душистых пряностей.',
         category: ['vegan', 'second-dish'],
         subcategory: ['second-dish', 'poultry-dish'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/pancakes.jpg',
         bookmarks: 85,
         likes: 152,
         date: '2023-02-15T00:00:00Z',
@@ -208,7 +220,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             'Такая картошечка украсит любой семейный обед! Все будут в полном восторге, очень вкусно! Аромат чеснока, хрустящая корочка на картошечке - просто объедение! Отличная идея для обеда или ужина, готовится просто!',
         category: ['vegan', 'second-dish'],
         subcategory: ['side-dishes', 'second-dish', 'vegetables'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/pancakes.jpg',
         bookmarks: 124,
         likes: 342,
         date: '2024-03-01T00:00:00Z',
@@ -247,7 +259,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             'Капустные котлеты по этому рецепту получаются необычайно пышными и невероятно вкусными. Мягкий вкус и лёгкая пряная нотка наверняка помогут сделать эти чудесные котлеты из капусты одним из ваших любимых овощных блюд.',
         category: ['vegan'],
         subcategory: ['second-dish', 'snacks'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/pancakes.jpg',
         bookmarks: 2,
         likes: 1,
         date: '2024-02-05T00:00:00Z',
@@ -276,6 +288,10 @@ export const veganRecipes: VeganRecipeCardProps[] = [
                 image: 'url',
             },
         ],
+        recommendedBy: {
+            avatar: '/src/assets/images/elenapovar.png',
+            userName: 'Елена Высоцкая',
+        },
     },
     {
         id: '6',
@@ -283,7 +299,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         description: 'Сытное рагу из сезонных овощей, приправленное травами.',
         category: ['vegan', 'second-dish'],
         subcategory: ['side-dishes', 'vegetables', 'snacks'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/pancakes.jpg',
         bookmarks: 8,
         likes: 60,
         date: '2023-03-12T00:00:00Z',
@@ -314,6 +330,10 @@ export const veganRecipes: VeganRecipeCardProps[] = [
                 image: 'url',
             },
         ],
+        recommendedBy: {
+            avatar: '/src/assets/images/funtasticooking.png',
+            userName: 'Alex Cook',
+        },
     },
     {
         id: '7',
@@ -321,7 +341,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         description: 'Ароматная лапша с курицей и шафраном, идеальное сочетание для сытного обеда.',
         category: ['second-dish'],
         subcategory: ['poultry-dish'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/pancakes.jpg',
         bookmarks: 258,
         likes: 1342,
         date: '2024-03-08T00:00:00Z',
@@ -358,7 +378,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         description: 'Салат с обжаренными на гриле овощами и легкой заправкой.',
         category: ['salads'],
         subcategory: ['warm-salads'],
-        image: 'путь к изображению в вашем проекте',
+        image: '/src/assets/images/pancakes.jpg',
         bookmarks: 10,
         likes: 80,
         date: '2023-03-20T00:00:00Z',
