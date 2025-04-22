@@ -16,7 +16,6 @@ export type SubcategoryId =
     | 'diet-soups'
     | 'meat'
     | 'fish'
-    | 'vegetable'
     | 'poultry-dish'
     | 'mushrooms'
     | 'offal'
@@ -45,9 +44,9 @@ export type SubcategoryId =
     | 'grill-fish'
     | 'grill-mushrooms'
     | 'grill-vegetables'
-    | 'vegan-snacks'
+    | 'snacks'
     | 'vegan-first'
-    | 'vegan-second'
+    | 'second-dish'
     | 'vegan-side'
     | 'vegan-desserts'
     | 'vegan-bakery'
@@ -190,7 +189,7 @@ export const navigation: Category[] = [
         subCategories: [
             { id: 'meat', name: 'Мясные' },
             { id: 'fish', name: 'Рыбные' },
-            { id: 'vegetable', name: 'Овощные' },
+            { id: 'vegetables', name: 'Овощные' },
             { id: 'poultry-dish', name: 'Из птицы' },
             { id: 'mushrooms', name: 'Из грибов' },
             { id: 'offal', name: 'Из субпродуктов' },
@@ -240,9 +239,9 @@ export const navigation: Category[] = [
         title: 'Веганская кухня',
         icon: '/src/assets/icons/nav/vegan.svg',
         subCategories: [
-            { id: 'vegan-snacks', name: 'Закуски' },
+            { id: 'snacks', name: 'Закуски' },
             { id: 'vegan-first', name: 'Первые блюда' },
-            { id: 'vegan-second', name: 'Вторые блюда' },
+            { id: 'second-dish', name: 'Вторые блюда' },
             { id: 'vegan-side', name: 'Гарниры' },
             { id: 'vegan-desserts', name: 'Десерты' },
             { id: 'vegan-bakery', name: 'Выпечка' },

@@ -49,7 +49,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         description:
             'Картошка, тушенная с болгарским перцем, фасолью, морковью и луком, - вариант сытного блюда на каждый день. Фасоль в данном случае заменяет мясо, делая рагу сытным и питательным. Чтобы сократить время приготовления, возьмём консервированную фасоль. Блюдо хоть и простое, но в полной мере наполнено ароматами и имеет выразительный вкус за счёт добавления томатной пасты.',
         category: ['second-dish', 'vegan'],
-        subcategory: ['snacks', 'vegetables'],
+        subcategory: ['vegetables', 'snacks'],
         image: '/src/assets/images/solyanka.jpg',
         bookmarks: 85,
         likes: 152,
@@ -96,7 +96,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         description:
             'Рекомендую всем приготовить постное блюдо из картофеля и грибов. Готовится это блюдо без яиц, без мяса и без сыра, из самых простых ингредиентов, а получается очень вкусно и сытно. Постный рецепт картофельных рулетиков с грибами, в томатном соусе, - на обед, ужин и даже на праздничный стол!',
         category: ['snacks', 'vegan'],
-        subcategory: ['snacks', 'warm-snacks'],
+        subcategory: ['warm-snacks', 'snacks'],
         image: '/src/assets/images/cutlets.jpg',
         bookmarks: 85,
         likes: 115,
@@ -219,7 +219,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         description:
             'Такая картошечка украсит любой семейный обед! Все будут в полном восторге, очень вкусно! Аромат чеснока, хрустящая корочка на картошечке - просто объедение! Отличная идея для обеда или ужина, готовится просто!',
         category: ['vegan', 'second-dish'],
-        subcategory: ['side-dishes', 'second-dish', 'vegetables'],
+        subcategory: ['second-dish', 'vegetables', 'side-dishes'],
         image: '/src/assets/images/pancakes.jpg',
         bookmarks: 124,
         likes: 342,
@@ -258,7 +258,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         description:
             'Капустные котлеты по этому рецепту получаются необычайно пышными и невероятно вкусными. Мягкий вкус и лёгкая пряная нотка наверняка помогут сделать эти чудесные котлеты из капусты одним из ваших любимых овощных блюд.',
         category: ['vegan'],
-        subcategory: ['second-dish', 'snacks'],
+        subcategory: ['snacks', 'second-dish'],
         image: '/src/assets/images/pancakes.jpg',
         bookmarks: 2,
         likes: 1,
@@ -298,7 +298,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         title: 'Овощное рагу',
         description: 'Сытное рагу из сезонных овощей, приправленное травами.',
         category: ['vegan', 'second-dish'],
-        subcategory: ['side-dishes', 'vegetables', 'snacks'],
+        subcategory: ['snacks', 'vegetables', 'side-dishes'],
         image: '/src/assets/images/pancakes.jpg',
         bookmarks: 8,
         likes: 60,

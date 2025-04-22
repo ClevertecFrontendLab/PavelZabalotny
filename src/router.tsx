@@ -22,6 +22,12 @@ const router = createBrowserRouter([
                     {
                         path: ':subCategoryId',
                         Component: CustomTabs,
+                        children: [
+                            // TODO: use Recipe component for route
+                            {
+                                path: ':id',
+                            },
+                        ],
                     },
                 ],
             },

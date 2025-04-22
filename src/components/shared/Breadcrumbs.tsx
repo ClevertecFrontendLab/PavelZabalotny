@@ -3,12 +3,8 @@ import { Property } from 'csstype';
 import { FC } from 'react';
 import { NavLink, useLocation } from 'react-router';
 
-import {
-    CategoryId,
-    CategoryTitle,
-    navigation,
-    SubCategory,
-} from '~/components/mosks/navigation.mock';
+import { Category, navigation } from '~/components/mosks/navigation.mock';
+import { veganRecipes } from '~/components/mosks/veganRecipes.mock';
 
 type BreadcrumbProps = {
     display?: ResponsiveValue<Property.Display>;
@@ -20,7 +16,8 @@ export const Breadcrumbs: FC<BreadcrumbProps> = ({ display, closeBurgerMenu }) =
     const pathName = location.pathname;
 
     const pathNames = pathName.split('/').filter(Boolean);
-    let categoryId: CategoryId;
+    let label: string | undefined;
+    let categoryItem: Category | undefined;
 
     return (
         <Breadcrumb
@@ -36,26 +33,22 @@ export const Breadcrumbs: FC<BreadcrumbProps> = ({ display, closeBurgerMenu }) =
                 </BreadcrumbLink>
             </BreadcrumbItem>
 
-            {pathNames.map((segment, index, array) => {
+            {pathNames.map((segment, index) => {
                 const routeTo = '/' + pathNames.slice(0, index + 1).join('/');
                 const isLast = index === pathNames.length - 1;
 
-                const categoryTitle: CategoryTitle | undefined = navigation.find(({ id }) => {
-                    categoryId = id;
+                if (index === 0) {
+                    categoryItem = navigation.find(({ id }) => id === segment);
+                    label = categoryItem?.title;
+                }
 
-                    return id === segment || id === array[index - 1];
-                })?.title;
+                if (index === 1) {
+                    label = categoryItem?.subCategories.find(({ id }) => id === segment)?.name;
+                }
 
-                const subCategoryName: string | null | undefined =
-                    index > 0
-                        ? navigation
-                              .find(({ id }) => id === categoryId)
-                              ?.subCategories.find(({ id }) => id === segment)?.name
-                        : null;
-
-                const label: CategoryTitle | SubCategory['name'] | undefined = subCategoryName
-                    ? subCategoryName
-                    : categoryTitle;
+                if (index === 2) {
+                    label = veganRecipes.find(({ id }) => id === segment)?.title;
+                }
 
                 return (
                     <BreadcrumbItem key={routeTo} isCurrentPage={isLast}>
