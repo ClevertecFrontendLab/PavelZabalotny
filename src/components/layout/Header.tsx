@@ -59,10 +59,10 @@ const Header = () => {
                         <Breadcrumbs display={{ base: 'none', lg: 'flex' }} />
                         <Hide above='lg'>
                             <ProfileNotification />
-                            <Center>
-                                <BurgerMenu />
-                            </Center>
                         </Hide>
+                        <Center>
+                            <BurgerMenu />
+                        </Center>
                         <Show above='lg'>
                             <HStack gap={3} mr={14} pl={10}>
                                 <Wrap>

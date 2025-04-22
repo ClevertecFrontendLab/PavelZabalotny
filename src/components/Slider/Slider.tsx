@@ -1,7 +1,7 @@
 import 'swiper/swiper-bundle.css';
 
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { Box, Heading, HStack, Show } from '@chakra-ui/react';
+import { Box, Heading, HStack } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { Keyboard, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -85,20 +85,19 @@ const Slider = () => {
                     <Box h={1}></Box>
                 </Swiper>
             </HStack>
-            <Show above='lg'>
-                <SliderButton
-                    className='swiper-button-prev-btn'
-                    icon={<ArrowBackIcon color='brand.yellow' boxSize={4} />}
-                    left={-2}
-                    data-test-id='carousel-back'
-                />
-                <SliderButton
-                    className='swiper-button-next-btn'
-                    icon={<ArrowForwardIcon color='brand.yellow' boxSize={4} />}
-                    right={-2}
-                    data-test-id='carousel-forward'
-                />
-            </Show>
+
+            <SliderButton
+                className='swiper-button-prev-btn'
+                icon={<ArrowBackIcon color='brand.yellow' boxSize={4} />}
+                left={-2}
+                dataTestId='carousel-back'
+            />
+            <SliderButton
+                className='swiper-button-next-btn'
+                icon={<ArrowForwardIcon color='brand.yellow' boxSize={4} />}
+                right={-2}
+                dataTestId='carousel-forward'
+            />
         </Box>
     );
 };

@@ -9,6 +9,7 @@ interface SliderButtonProps {
     left?: number;
     right?: number;
     className?: string;
+    dataTestId?: string;
 }
 
 const SliderButton: FC<SliderButtonProps> = ({
@@ -19,6 +20,7 @@ const SliderButton: FC<SliderButtonProps> = ({
     left,
     right,
     className,
+    dataTestId,
 }) => (
     <Button
         leftIcon={icon}
@@ -32,6 +34,8 @@ const SliderButton: FC<SliderButtonProps> = ({
         right={right}
         zIndex={9}
         className={className}
+        data-test-id={dataTestId}
+        visibility={{ base: 'hidden', lg: 'visible' }}
     ></Button>
 );
 

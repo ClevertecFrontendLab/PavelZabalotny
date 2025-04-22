@@ -35,6 +35,7 @@ const Navigation: FC<NavigationProps> = ({ closeBurgerMenu }) => {
 
     return (
         <Box
+            data-test-id='nav'
             mt={{ base: 0, lg: 6 }}
             pt={{ base: 0, lg: 4 }}
             pr={4}

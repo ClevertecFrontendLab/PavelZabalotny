@@ -19,13 +19,19 @@ const BurgerMenu = () => {
             {/* Кнопка бургер/крестик */}
             <IconButton
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
-                icon={isOpen ? <CloseIcon boxSize={4} /> : <HamburgerIcon boxSize={6} />}
+                icon={
+                    isOpen ? (
+                        <CloseIcon boxSize={4} data-test-id='close-icon' />
+                    ) : (
+                        <HamburgerIcon boxSize={6} data-test-id='hamburger-icon' />
+                    )
+                }
                 onClick={onToggle}
                 variant='ghost'
                 size='lg'
                 _hover={{ bg: 'transparent' }}
                 _active={{ bg: 'transparent' }}
-                display={{ base: 'flex', lg: 'none' }}
+                visibility={{ base: 'visible', lg: 'hidden' }}
             />
 
             <AnimatePresence>

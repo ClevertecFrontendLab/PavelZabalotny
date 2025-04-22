@@ -11,6 +11,15 @@ type BreadcrumbProps = {
     closeBurgerMenu?: () => void;
 };
 
+const customPaths = {
+    'most-delicious': {
+        title: 'Самое сочное',
+    },
+    'the-juiciest': {
+        title: 'Самое сочное',
+    },
+} as const;
+
 export const Breadcrumbs: FC<BreadcrumbProps> = ({ display, closeBurgerMenu }) => {
     const location = useLocation();
     const pathName = location.pathname;
@@ -26,6 +35,7 @@ export const Breadcrumbs: FC<BreadcrumbProps> = ({ display, closeBurgerMenu }) =
             padding={4}
             display={display}
             sx={{ '& ol': { flexWrap: 'wrap' } }}
+            data-test-id='breadcrumbs'
         >
             <BreadcrumbItem key='home'>
                 <BreadcrumbLink as={NavLink} to='/' onClick={closeBurgerMenu}>
@@ -39,7 +49,9 @@ export const Breadcrumbs: FC<BreadcrumbProps> = ({ display, closeBurgerMenu }) =
 
                 if (index === 0) {
                     categoryItem = navigation.find(({ id }) => id === segment);
-                    label = categoryItem?.title;
+                    label =
+                        categoryItem?.title ||
+                        customPaths[segment as keyof typeof customPaths]?.title;
                 }
 
                 if (index === 1) {

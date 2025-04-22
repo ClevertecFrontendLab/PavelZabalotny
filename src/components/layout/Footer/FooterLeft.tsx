@@ -10,6 +10,7 @@ const FooterLeft = () => (
         align='flex-start'
         position={{ base: 'absolute', lg: 'static' }}
         bottom={8}
+        data-test-id='footer'
     >
         <Text fontWeight={500} color='rgba(0, 0, 0, 0.24)'>
             Версия программы 03.25
