@@ -48,9 +48,9 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         title: 'Картошка, тушенная с болгарским перцем и фасолью в томатном соусе',
         description:
             'Картошка, тушенная с болгарским перцем, фасолью, морковью и луком, - вариант сытного блюда на каждый день. Фасоль в данном случае заменяет мясо, делая рагу сытным и питательным. Чтобы сократить время приготовления, возьмём консервированную фасоль. Блюдо хоть и простое, но в полной мере наполнено ароматами и имеет выразительный вкус за счёт добавления томатной пасты.',
-        category: ['second-dish', 'vegan'],
+        category: ['second-dish', 'vegan', 'national', 'kids'],
         subcategory: ['vegetables', 'snacks'],
-        image: '/src/assets/images/solyanka.jpg',
+        image: '/src/assets/images/recipe.jpg',
         bookmarks: 85,
         likes: 152,
         date: '2025-02-28T00:00:00Z',
@@ -69,22 +69,22 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Нарезать картошку и перец.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Обжарить лук до золотистого цвета.',
-                image: 'url',
+                image: '',
             },
             {
                 stepNumber: 3,
                 description: 'Добавить картошку, перец и фасоль, залить соусом.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 4,
                 description: 'Тушить на медленном огне 30 минут.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
         meat: '',
@@ -114,17 +114,17 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Отварить картошку и сделать пюре.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Обжарить грибы до готовности.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 3,
                 description: 'Сформировать рулетики и обжарить.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
         side: 'potatoes',
@@ -157,17 +157,17 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Приготовить соусы.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Сложить слои лазаньи.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 3,
                 description: 'Запекать 30 минут.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
         recommendedBy: {
@@ -199,17 +199,17 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Смешать булгур и чечевицу.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Сформировать тефтели и запечь.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 3,
                 description: 'Подавать с соусом.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
     },
@@ -237,17 +237,17 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Очистить и нарезать картошку.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Обжарить с чесноком.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 3,
                 description: 'Подавать горячей.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
         side: 'potatoes',
@@ -275,17 +275,17 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Нарезать капусту и отварить.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Смешать с мукой и сформировать котлеты.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 3,
                 description: 'Обжарить до золотистой корочки.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
         recommendedBy: {
@@ -317,17 +317,17 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Нарезать все овощи.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Обжарить на сковороде.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 3,
                 description: 'Добавить специи и тушить до готовности.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
         recommendedBy: {
@@ -358,17 +358,17 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Отварить лапшу.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Обжарить курицу с луком и шафраном.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 3,
                 description: 'Смешать лапшу с курицей и подавать.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
     },
@@ -394,12 +394,12 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Обжарить овощи на гриле.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Смешать с заправкой и подавать.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
     },
@@ -425,12 +425,12 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             {
                 stepNumber: 1,
                 description: 'Обжарить овощи на гриле.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
             {
                 stepNumber: 2,
                 description: 'Смешать с заправкой и подавать.',
-                image: 'url',
+                image: '/src/assets/images/recipeSteps.jpg',
             },
         ],
     },

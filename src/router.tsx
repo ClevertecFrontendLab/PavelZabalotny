@@ -4,6 +4,7 @@ import LayoutWrapper from '~/components/layout/LayoutWrapper';
 import CustomTabs from '~/components/shared/CustomTabs';
 import HomePage from '~/pages/HomePage';
 import MostDeliciousPage from '~/pages/MostDeliciousPage';
+import RecipePage from '~/pages/RecipePage';
 import VeganCuisinePage from '~/pages/VeganCuisinePage';
 
 const router = createBrowserRouter([
@@ -22,14 +23,12 @@ const router = createBrowserRouter([
                     {
                         path: ':subCategoryId',
                         Component: CustomTabs,
-                        children: [
-                            // TODO: use Recipe component for route
-                            {
-                                path: ':id',
-                            },
-                        ],
                     },
                 ],
+            },
+            {
+                path: ':categoryId/:subCategoryId/:id',
+                Component: RecipePage,
             },
             {
                 path: 'most-delicious',

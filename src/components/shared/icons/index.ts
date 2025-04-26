@@ -5,4 +5,6 @@ export { default as CreateIcon } from './CreateIcon';
 export { default as FilterIcon } from './FilterIcon';
 export { default as LikeIcon } from './LikeIcon';
 export { default as LogoIcon } from './LogoIcon';
+export { default as SubscribeIcon } from './SubscribeIcon';
+export { default as TimeIcon } from './TimeIcon';
 export { default as ViewsIcon } from './ViewsIcon';

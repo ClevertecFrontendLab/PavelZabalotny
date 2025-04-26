@@ -36,21 +36,6 @@ const MostDeliciousCard: FC<MostDeliciousCardProps> = ({
         }}
     >
         <CardHeader p={0} flexShrink={0}>
-            {/*<Box
-                position='absolute'
-                display={{ base: 'flex', lg: 'none' }}
-                alignItems='center'
-                bg='brand.yellow'
-                borderRadius={4}
-                padding='2px 4px'
-                top={2}
-                left={2}
-            >
-                <Image src={category.icon} boxSize={4} />
-                <Box as='span' fontSize='0.875rem'>
-                    {category.text}
-                </Box>
-            </Box>*/}
             {recommendedBy && (
                 <Box
                     position='absolute'
