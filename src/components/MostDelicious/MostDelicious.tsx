@@ -1,11 +1,12 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Box, Button, Heading, HStack, Stack } from '@chakra-ui/react';
-import { FC } from 'react';
-import { NavLink } from 'react-router';
+import { FC, useMemo } from 'react';
+import { NavLink, useLocation } from 'react-router';
 
 import { veganRecipes } from '~/components/mosks/veganRecipes.mock';
 import { useBreakpoints } from '~/hooks/useBreakpoints';
 
+import type { CategoryId } from '../mosks/navigation.mock';
 import MostDeliciousCard from './MostDeliciousCard';
 
 interface MostDeliciousProps {
@@ -14,6 +15,28 @@ interface MostDeliciousProps {
 
 const MostDelicious: FC<MostDeliciousProps> = ({ maxItems }) => {
     const { isAbove768 } = useBreakpoints();
+    // TODO: Filter by category && subcategory
+    const location = useLocation();
+    const pathName = location.pathname;
+    const pathNames = pathName.split('/').filter(Boolean);
+    console.log(pathName);
+
+    const filteredRecipes = veganRecipes.filter(
+        (recipe) =>
+            recipe.category.includes(pathNames[0] as CategoryId) ||
+            recipe.subcategory.includes(pathNames[1] as CategoryId),
+    );
+
+    const sortedFilteredRecipes = filteredRecipes.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+
+    const topRecipes = useMemo(() => {
+        const copy = [...veganRecipes];
+        copy.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+        return copy.slice(0, maxItems);
+    }, [maxItems]);
 
     return (
         <Box
@@ -51,9 +74,13 @@ const MostDelicious: FC<MostDeliciousProps> = ({ maxItems }) => {
                 flexWrap={{ base: 'nowrap', md: 'wrap' }}
                 align='center'
             >
-                {veganRecipes.slice(0, maxItems).map((recipe) => (
-                    <MostDeliciousCard key={recipe.id} recipe={recipe} />
-                ))}
+                {pathNames[0] === 'most-delicious' || pathName === '/'
+                    ? topRecipes.map((recipe) => (
+                          <MostDeliciousCard key={recipe.id} recipe={recipe} />
+                      ))
+                    : sortedFilteredRecipes.map((recipe) => (
+                          <MostDeliciousCard key={recipe.id} recipe={recipe} />
+                      ))}
             </Stack>
             <Button
                 as={NavLink}

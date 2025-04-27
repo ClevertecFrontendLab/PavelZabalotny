@@ -37,12 +37,8 @@ const nutritionKeys: { [K in keyof NutritionValue]: { text: string; unit: string
 };
 
 const RecipePage = () => {
-    const [portions, setPortions] = useState<number>(1);
     const { id } = useParams();
     const recipe = veganRecipes.find((item) => item.id === id);
-
-    if (!recipe) return <div>Рецепт не найден</div>;
-
     const {
         title,
         description,
@@ -54,7 +50,11 @@ const RecipePage = () => {
         nutritionValue,
         ingredients,
         steps,
-    } = recipe;
+        portions,
+    } = recipe!;
+    const [portionsState, setPortionsState] = useState<number>(portions!);
+
+    if (!recipe) return <div>Рецепт не найден</div>;
 
     return (
         <Box mt={{ base: 4, lg: 6 }} overflowY='auto' mb={{ base: '50px' }}>
@@ -293,13 +293,13 @@ const RecipePage = () => {
                                 w='73px'
                                 h='40px'
                                 min={1}
-                                onChange={(valueString) => setPortions(Number(valueString))}
-                                value={portions}
+                                onChange={(valueString) => setPortionsState(Number(valueString))}
+                                value={portionsState}
                             >
                                 <NumberInputField />
                                 <NumberInputStepper>
-                                    <NumberIncrementStepper />
-                                    <NumberDecrementStepper />
+                                    <NumberIncrementStepper data-test-id='increment-stepper' />
+                                    <NumberDecrementStepper data-test-id='decrement-stepper' />
                                 </NumberInputStepper>
                             </NumberInput>
                         </Box>
@@ -320,7 +320,11 @@ const RecipePage = () => {
                         >
                             <Box>{item.title}</Box>
                             <Box>
-                                {Number(item.count) * portions} {item.measureUnit}
+                                <Box as='span' data-test-id={`ingredient-quantity-${i}`}>
+                                    {(Number(item.count) / portions!) * portionsState}
+                                </Box>
+                                &nbsp;
+                                <Box as='span'>{item.measureUnit}</Box>
                             </Box>
                         </HStack>
                     ))}

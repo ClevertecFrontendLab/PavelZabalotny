@@ -5,6 +5,7 @@ import { NavLink, useLocation } from 'react-router';
 
 import { Category, navigation } from '~/components/mosks/navigation.mock';
 import { veganRecipes } from '~/components/mosks/veganRecipes.mock';
+import { useBreakpoints } from '~/hooks/useBreakpoints';
 
 type BreadcrumbProps = {
     display?: ResponsiveValue<Property.Display>;
@@ -23,6 +24,7 @@ const customPaths = {
 export const Breadcrumbs: FC<BreadcrumbProps> = ({ display, closeBurgerMenu }) => {
     const location = useLocation();
     const pathName = location.pathname;
+    const { isAbove768 } = useBreakpoints();
 
     const pathNames = pathName.split('/').filter(Boolean);
     let label: string | undefined;
@@ -35,7 +37,7 @@ export const Breadcrumbs: FC<BreadcrumbProps> = ({ display, closeBurgerMenu }) =
             padding={4}
             display={display}
             sx={{ '& ol': { flexWrap: 'wrap' } }}
-            data-test-id='breadcrumbs'
+            data-test-id={isAbove768 ? null : 'breadcrumbs'}
         >
             <BreadcrumbItem key='home'>
                 <BreadcrumbLink as={NavLink} to='/' onClick={closeBurgerMenu}>

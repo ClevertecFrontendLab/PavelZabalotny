@@ -1,16 +1,26 @@
 import { TabList, Tabs } from '@chakra-ui/icons';
 import { Tab } from '@chakra-ui/react';
+import { NavLink, useLocation } from 'react-router';
 
 import { navigation } from '~/components/mosks/navigation.mock';
 
 const CustomTabs = () => {
-    const tabCategory = navigation.filter((category) => category.id === 'vegan')[0];
+    const location = useLocation();
+    const pathName = location.pathname;
+    const pathNames = pathName.split('/').filter(Boolean);
+    const tabCategory = navigation.find((category) => category.id === pathNames[0]);
+    const tabIndex = tabCategory?.subCategories.findIndex(
+        (subCategory) => subCategory.id === pathNames[1],
+    );
 
     return (
-        <Tabs as='section' pb={3} mt={8} overflowX='auto'>
-            <TabList display='flex' justifyContent='center'>
-                {tabCategory.subCategories.map((subCategory) => (
+        <Tabs as='section' pb={3} mt={8} index={tabIndex}>
+            <TabList display='flex' justifyContent='center' flexWrap='wrap'>
+                {tabCategory?.subCategories.map((subCategory, i) => (
                     <Tab
+                        data-test-id={`tab-${subCategory.id}-${i}`}
+                        as={NavLink}
+                        to={`/${tabCategory.id}/${subCategory.id}`}
                         key={subCategory.id}
                         flexShrink={0}
                         fontSize={{ base: '0.875rem', lg: '1rem' }}

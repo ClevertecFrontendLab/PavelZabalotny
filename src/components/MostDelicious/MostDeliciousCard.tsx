@@ -11,6 +11,7 @@ import {
     Text,
 } from '@chakra-ui/react';
 import { FC } from 'react';
+import { NavLink } from 'react-router';
 
 import { categoryInfo } from '~/components/mosks/navigation.mock';
 import { VeganRecipeCardProps } from '~/components/mosks/veganRecipes.mock';
@@ -23,9 +24,20 @@ type MostDeliciousCardProps = {
 };
 
 const MostDeliciousCard: FC<MostDeliciousCardProps> = ({
-    recipe: { title, description, image, category, recommendedBy, bookmarks, likes },
+    recipe: {
+        title,
+        description,
+        image,
+        category,
+        subcategory,
+        id,
+        recommendedBy,
+        bookmarks,
+        likes,
+    },
 }) => (
     <Card
+        data-test-id={`food-card-${id}`}
         display='flex'
         flexDirection='row'
         w='100%'
@@ -108,7 +120,7 @@ const MostDeliciousCard: FC<MostDeliciousCardProps> = ({
                 </HStack>
 
                 <Text
-                    noOfLines={{ base: 2, xl: 1 }}
+                    noOfLines={{ base: 2, lg: 1 }}
                     as='h3'
                     fontSize={{ base: '1rem', lg: '1.25rem' }}
                     lineHeight={{ base: 1.5, lg: 1.4 }}
@@ -151,6 +163,9 @@ const MostDeliciousCard: FC<MostDeliciousCardProps> = ({
                     </Box>
                 </Center>
                 <Button
+                    data-test-id={`card-link-${id}`}
+                    as={NavLink}
+                    to={`/${category[0]}/${subcategory[0]}/${id}`}
                     maxH={{ base: 6, lg: 8 }}
                     bg='#000'
                     color='#fff'

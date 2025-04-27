@@ -28,7 +28,7 @@ const SliderCard: FC<NewRecipeCardProps> = ({
     recipe: { category, subcategory, title, description, image, bookmarks, likes, id },
 }) => {
     // TODO: Implement NavLink to recipe page
-    const link = `${category[0]}/${subcategory[0]}/${id}`;
+    const link = `/${category[0]}/${subcategory[0]}/${id}`;
 
     return (
         <Card

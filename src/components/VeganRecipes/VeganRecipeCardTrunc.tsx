@@ -1,5 +1,6 @@
 import { Box, Button, Card, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
+import { NavLink } from 'react-router';
 
 import { categoryInfo } from '~/components/mosks/navigation.mock';
 import { VeganRecipeCardProps } from '~/components/mosks/veganRecipes.mock';
@@ -9,7 +10,7 @@ type VeganRecipeCardTruncProps = {
 };
 
 const VeganRecipeCardTrunc: FC<VeganRecipeCardTruncProps> = ({
-    veganRecipe: { title, category },
+    veganRecipe: { title, category, subcategory, id },
 }) => (
     <Card
         border='1px solid rgba(0, 0, 0, 0.08)'
@@ -31,6 +32,9 @@ const VeganRecipeCardTrunc: FC<VeganRecipeCardTruncProps> = ({
                 {title}
             </Text>
             <Button
+                data-test-id={`card-link-${id}`}
+                as={NavLink}
+                to={`/${category[0]}/${subcategory[0]}/${id}`}
                 variant='outline'
                 flexShrink={0}
                 border='1px solid #2db100'

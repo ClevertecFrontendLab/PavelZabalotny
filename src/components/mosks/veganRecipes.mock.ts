@@ -48,22 +48,20 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         title: 'Картошка, тушенная с болгарским перцем и фасолью в томатном соусе',
         description:
             'Картошка, тушенная с болгарским перцем, фасолью, морковью и луком, - вариант сытного блюда на каждый день. Фасоль в данном случае заменяет мясо, делая рагу сытным и питательным. Чтобы сократить время приготовления, возьмём консервированную фасоль. Блюдо хоть и простое, но в полной мере наполнено ароматами и имеет выразительный вкус за счёт добавления томатной пасты.',
-        category: ['second-dish', 'vegan', 'national', 'kids'],
-        subcategory: ['vegetables', 'snacks'],
+        category: ['vegan', 'second-dish', 'national', 'kids'],
+        subcategory: ['snacks', 'vegetables'],
         image: '/src/assets/images/recipe.jpg',
         bookmarks: 85,
         likes: 152,
         date: '2025-02-28T00:00:00Z',
         time: '40 минут',
-        portions: 2,
+        portions: 4,
         nutritionValue: { calories: 250, proteins: 5, fats: 8, carbohydrates: 40 },
         ingredients: [
-            { title: 'картошка', count: '4', measureUnit: 'шт.' },
-            { title: 'болгарский перец', count: '2', measureUnit: 'шт.' },
-            { title: 'фасоль', count: '200', measureUnit: 'г' },
-            { title: 'томатный соус', count: '200', measureUnit: 'мл' },
+            { title: 'лапша', count: '200', measureUnit: 'г' },
+            { title: 'курица', count: '300', measureUnit: 'г' },
+            { title: 'шафран', count: '1', measureUnit: 'ч. л.' },
             { title: 'лук', count: '1', measureUnit: 'шт.' },
-            { title: 'специи', count: '0', measureUnit: 'по вкусу' },
         ],
         steps: [
             {
@@ -344,7 +342,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
         image: '/src/assets/images/pancakes.jpg',
         bookmarks: 258,
         likes: 1342,
-        date: '2024-03-08T00:00:00Z',
+        date: '2025-03-08T00:00:00Z',
         time: '40 минут',
         portions: 4,
         nutritionValue: { calories: 400, proteins: 30, fats: 15, carbohydrates: 50 },
@@ -372,6 +370,7 @@ export const veganRecipes: VeganRecipeCardProps[] = [
             },
         ],
     },
+
     {
         id: '8',
         title: 'Гриль-салат с овощами',

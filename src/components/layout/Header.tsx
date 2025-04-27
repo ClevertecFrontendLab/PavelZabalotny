@@ -24,7 +24,7 @@ import { useBreakpoints } from '~/hooks/useBreakpoints';
 import { LogoIcon } from '../shared/icons';
 
 const Header = () => {
-    const { isMin768 } = useBreakpoints();
+    const { isMin768, isAbove768 } = useBreakpoints();
 
     return (
         <Box
@@ -56,7 +56,7 @@ const Header = () => {
                         w='100%'
                         justifyContent={{ base: 'flex-end', lg: 'space-between' }}
                     >
-                        <Breadcrumbs display={{ base: 'none', lg: 'flex' }} />
+                        {isAbove768 && <Breadcrumbs display={{ base: 'none', lg: 'flex' }} />}
                         <Hide above='lg'>
                             <ProfileNotification />
                         </Hide>

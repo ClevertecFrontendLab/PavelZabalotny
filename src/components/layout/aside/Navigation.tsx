@@ -12,7 +12,7 @@ import {
     Text,
 } from '@chakra-ui/react';
 import { FC } from 'react';
-import { NavLink, useNavigate } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 
 import { Category, navigation } from '~/components/mosks/navigation.mock';
 
@@ -22,6 +22,10 @@ type NavigationProps = {
 
 const Navigation: FC<NavigationProps> = ({ closeBurgerMenu }) => {
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const pathName = location.pathname;
+    const pathNames = pathName.split('/').filter(Boolean);
 
     const handleCategoryClick = (category: Category) => {
         if (category.subCategories?.length > 0) {
@@ -75,7 +79,7 @@ const Navigation: FC<NavigationProps> = ({ closeBurgerMenu }) => {
                             px={3}
                             py={2}
                             _expanded={{ background: 'brand.navi', fontWeight: 700 }}
-                            data-test-id={category.id === 'vegan' ? 'vegan-cuisine' : null}
+                            data-test-id={category.id === 'vegan' ? 'vegan-cuisine' : category.id}
                             onClick={() => handleCategoryClick(category)}
                         >
                             <Flex align='center' flex='1' textAlign='left' gap={3}>
@@ -89,8 +93,14 @@ const Navigation: FC<NavigationProps> = ({ closeBurgerMenu }) => {
                             <Stack spacing={1} position='relative'>
                                 {category.subCategories.map((subCategory) => (
                                     <Link
+                                        data-test-id={
+                                            pathNames[1] === subCategory.id
+                                                ? `${subCategory.id}-active`
+                                                : null
+                                        }
                                         as={NavLink}
                                         key={subCategory.id}
+                                        // TODO: Implement connection to Tabs
                                         to={`${category.id}/${subCategory.id}`}
                                         p='6px 0px 6px 44px'
                                         display='inline-flex'
